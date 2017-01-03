@@ -1,0 +1,8 @@
+<template name="article-more">
+	<view class="weui-footer">
+			<view class="weui-footer__links">
+				<navigator url="/pages/about/about" class="weui-footer__link">Geek2Startup</navigator>
+			</view>
+		<view class="weui-footer__text">Copyright © 2016 Geek2Startup.com </view>
+	</view>
+</template>

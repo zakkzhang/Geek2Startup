@@ -1,0 +1,9 @@
+<import src="../../comm_wxml/weapp.wxml"/>
+
+<view class="container">
+  <view class="textContainer">
+    <text class="textStyle">{{text}}</text>
+  </view>
+</view>
+
+<template is="appfooter_logo" />

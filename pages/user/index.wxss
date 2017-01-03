@@ -1,0 +1,13 @@
+/**index.wxss**/
+
+.Grid {
+  display: flex;
+}
+
+.Grid-cell {
+  flex: 1;
+}
+
+.Grid-cell.icon {
+  flex: 0 0 32rpx;
+}

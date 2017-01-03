@@ -1,0 +1,48 @@
+.weui-media-box__info {
+	padding-bottom: 0;
+}
+
+.weui-media-box__info__meta {
+	font-size: 0.8em;
+	color: #ccc;
+}
+
+.weui-media-box:before {
+	border: none;
+}
+
+.weui-panel {
+	margin: 0;
+	margin-bottom: 2em;
+}
+
+.weui-cell:before {
+	border-top: 1rpx solid #eee;
+}
+
+.weui-media-box__title {
+	font-weight: 800;
+	font-size: 14px;
+}
+
+.weui-panel:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 0px;
+  display: none;
+  border-top: 1rpx solid #eee;
+  color: #E5E5E5;
+}
+.weui-panel:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1rpx solid #eee;
+  color: #eee;
+}

@@ -1,0 +1,114 @@
+<template name="appbox">
+
+	<view wx:if="{{we_data.display == 'photo'}}" class="appbox appbox-photo page__bd container weui-flex">
+    <view wx:for="{{we_data.photos}}" wx:key="*this" class="weui-flex__item" >
+    	<image class="photos" src="{{item}}" mode="aspectFill" bindtap="clickPhoto" data-src="{{item}}" />
+    </view>
+	</view>
+
+
+	<view wx:if="{{we_data.display == 'text'}}" class="appbox page__bd container" data-link="{{we_data.link}}" bindtap="clickText">
+    <view class="weui-article__title">{{we_data.title}}</view>
+    <view wx:if="{{we_data.midtitle != ''}}" class="weui-article__p b">{{we_data.midtitle}}</view>
+    <view class="weui-article__p {{we_data.textmore == 0 ? '':'text-more'}}" >
+			{{we_data.text}}
+		</view>
+	</view>
+
+	<view wx:if="{{we_data.display == 'keyword'}}" class="appbox page__bd container" data-link="{{we_data.link}}" bindtap="clickText">
+    <view class="weui-article__title">{{we_data.title}}</view>
+    <view wx:if="{{we_data.midtitle != ''}}" class="weui-article__p b">{{we_data.midtitle}}</view>
+    <view class="keyword weui-article__p {{we_data.textmore == 0 ? '':'text-more'}}" >
+			{{we_data.text}}
+		</view>
+	</view>
+
+</template>
+
+<template name="apphead">
+	<view class="head weui-flex">
+		<view class="title">{{we_data.user_name}}</view>
+		<view class="desc">{{we_data.user_desc}}</view>
+	</view>
+</template>
+
+<template name="apphead_title">
+	<view class="head article">
+		<view class="title">{{we_data}}</view>
+	</view>
+</template>
+
+<template name="apphead_avatar">
+	<view class="head weui-flex">
+		<view class="weui-flex__item">
+		<view class="title">{{we_data.user_name}}</view>
+		<view class="desc">{{we_data.user_desc}}</view>
+		</view>
+		<view class="avatar text-right">
+			<image src="{{we_data.user_avatar}}" mode="{{we_data.user_avatar_mode}}" class="weapp_image" />
+		</view>
+	</view>
+</template>
+
+<template name="appfooter">
+  <view class="{{we_data.isListEnd}} weui-loadmore weui-loadmore_line weui-loadmore_dot">
+  	<view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+	</view>
+  <view class="{{we_data.isLoading}} weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+
+	<view class="footer {{we_data.isLoadMore}}">
+	    <view class="text-center" >
+	    	<button class="weui-btn mini-btn" bindtap="loadMore" type="primary" size="mini">载入更多</button>
+	    </view>
+	</view>
+</template>
+
+<template name="appfooter_logo">
+  <view class="appfooter weui-footer weui-footer_fixed-bottom">
+      <view class="weui-footer__links">
+          <navigator url="/pages/about/about" class="weui-footer__link">Geek2Startup</navigator>
+      </view>
+      <view class="weui-footer__text">Copyright © 2016 Geek2Startup.com </view>
+  </view>
+</template>
+
+<template name="appfooter_end">
+	<view class="weui-footer">
+			<view class="weui-footer__links">
+				<navigator url="/pages/about/about" class="weui-footer__link">Geek2Startup</navigator>
+			</view>
+		<view class="weui-footer__text">Copyright © 2016 Geek2Startup.com </view>
+	</view>
+</template>
+
+<template name="appfooter_action">
+  <view class="appfooter app-footer-action weui-footer_fixed-bottom flex-row flex-wrp">
+      <view class="action-icon flex-item text-center" bindtap="barAction" data-action="love">
+      	<image src="/image/icon-assets/love.png" />
+      	<view class="action-text">喜欢</view>
+      </view>
+      <view class="action-icon flex-item text-center" bindtap="barAction" data-action="chat">
+      	<image src="/image/icon-assets/chat.png" />
+      	<view class="action-text">留言</view>
+      </view>
+      <view class="flex-item flex-autoempty" >
+      	<view class="action-text">{{we_data.user_name}}</view>
+      </view>
+  </view>
+</template>
+
+<template name="appfooter_input">
+  <view class="appfooter app-footer-input weui-footer_fixed-bottom flex-row flex-wrp">
+      <view class="flex-item flex-autoempty" >
+      	<input placeholder="留言" auto-focus/>
+      </view>
+      <view class="action-icon flex-item text-center" bindtap="barAction" data-action="chat">
+      	<image src="/image/icon-assets/chat.png" />
+      	<view class="action-text">发送</view>
+      </view>
+  </view>
+</template>
+

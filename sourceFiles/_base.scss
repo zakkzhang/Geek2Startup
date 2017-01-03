@@ -1,0 +1,55 @@
+/** base **/
+
+// reset wx
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+// margin & padding
+
+.pb50 {
+  padding-bottom: 100rpx;
+}
+
+// Display
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+// Text
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-more {
+  overflow: hidden;
+  text-overflow: '... ..';
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// base set
+
+.cir {
+  border-radius: 50%;
+}
+
+.color-green {
+  color: #48C23D;
+}

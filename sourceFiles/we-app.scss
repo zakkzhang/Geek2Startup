@@ -1,0 +1,85 @@
+@import 'weui';
+@import 'page';
+@import 'base';
+@import 'appbox';
+@import 'parse';
+@import 'we';
+
+.b {
+  font-weight: 800;
+  color: #0a0a0a;
+}
+
+.index {
+  .head {
+    background-color: #55BF46;
+    border-bottom: none;
+
+    .title,
+    .desc {
+      color: #fff;
+    }
+
+  }
+
+  .name {
+    font-weight: 800;
+    color: #439c36;
+  }
+
+}
+
+.weapp_image {
+  background-color: #eee;
+  min-width: 5rpx;
+  min-height: 5rpx;
+  display: block;
+}
+
+.avatar .weapp_image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+}
+
+.head,
+.footer {
+  padding: 50rpx;
+  padding-top: 60rpx;
+  line-height: 1;
+  border-bottom: 1px #eee solid;
+}
+
+.footer {
+  border-bottom: none;
+}
+
+.appfooter {
+  padding: 10rpx 20rpx;
+  background: rgba(255, 255, 255, .93);
+  -webkit-backdrop-filter: brightness(1.5) blur(4px);
+  bottom: 0;
+  border-top: 1px rgba(0, 0, 0, .1) solid;
+}
+
+.title {
+  font-size: 72rpx;
+}
+
+.desc {
+  margin-top: 10rpx;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+.list {
+  padding: 50rpx;
+}
+
+.link {
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+  border-bottom: 1px #eee solid;
+}

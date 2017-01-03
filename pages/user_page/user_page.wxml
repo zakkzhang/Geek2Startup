@@ -1,0 +1,14 @@
+<import src="../../comm_wxml/weapp.wxml"/>
+
+<view class="pb50">
+	<template is="apphead_avatar" data="{{we_data:head}}" />
+
+	<block wx:for="{{body}}" wx:key="">
+		<view class="item{{index}} " bindtap="ellips" data-id="{{index}}" data-type="{{item.display}}" >
+			<template is="appbox" data="{{we_data:item}}" />
+		</view>
+	</block>
+
+	<template is="appfooter_action" data="{{we_data:head}}"  />
+
+</view>
