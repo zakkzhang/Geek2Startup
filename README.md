@@ -14,15 +14,28 @@ we-app 微信小程序
 
 
 
+
+## 架手架說明
+
+##### wx-Develop
+
+微信 web ide 打開此目錄
+
+##### Scaffolds
+
+此下的 jade 文件會自動轉為 wxml 到 wx-Develop 目錄下的相同路徑下
+
+##### Scaffolds : mainStyle
+
+mainStyle 下的 we-app.scss 會自動轉換為 we-app.wxss，we-app.wxss 將會影響全局樣式。
+
+
+
+架手架使用 Codekit.app 運作，npm cli 需自行配置。
+
+
+
 ## 說明
-
-##### sourceFiles
-
-sourceFiles 下的 we-app.scss 會自動轉換為 we-app.wxss。請使用各種工具自行轉換。
-
-we-app.wxss 將會影響全局樣式。
-
-
 
 ##### comm_wxml
 
@@ -31,6 +44,8 @@ we-app.wxss 將會影響全局樣式。
 * weapp.wxml：頁頭頁腳模板；
 * wemore.wxml：未啟用；
 * weaction.wxml：未啟用；
+
+
 
 
 

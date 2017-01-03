@@ -1,0 +1,39 @@
+{
+"pages": [
+	"pages\/index\/index",
+	"pages\/apply\/apply",
+	"pages\/about\/about",
+	"pages\/article\/article",
+	"pages\/video\/video",
+	"pages\/user\/index",
+	"pages\/user_page\/user_page",
+	"pages\/user_edit\/user_edit"
+	],
+"tabBar": {
+	"backgroundColor": "#fff",
+	"borderStyle": "white",
+	"color": "#404040",
+	"list": [
+		{
+			"iconPath": "image\/icon-assets\/home.png",
+			"pagePath": "pages\/index\/index",
+			"selectedIconPath": "image\/icon-assets\/home_HL.png",
+			"text": "极客"
+			},
+		{
+			"iconPath": "image\/icon-assets\/user.png",
+			"pagePath": "pages\/user\/index",
+			"selectedIconPath": "image\/icon-assets\/user_HL.png",
+			"text": "个人资料"
+			}
+		],
+	"selectedColor": "#48C23D"
+	},
+"window": {
+	"backgroundColor": "FCF8FE",
+	"backgroundTextStyle": "light",
+	"navigationBarBackgroundColor": "#FCF8FE",
+	"navigationBarTextStyle": "black",
+	"navigationBarTitleText": " "
+	}
+}
