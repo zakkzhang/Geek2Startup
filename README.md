@@ -19,19 +19,15 @@ we-app 微信小程序
 
 ##### wx-Develop
 
-微信 web ide 打開此目錄
+在微信 web ide 打開此目錄
 
 ##### Scaffolds
 
-此下的 jade 文件會自動轉為 wxml 到 wx-Develop 目錄下的相同路徑下
+不用参与微信 IDE 的文件
 
 ##### Scaffolds : mainStyle
 
 mainStyle 下的 we-app.scss 會自動轉換為 we-app.wxss，we-app.wxss 將會影響全局樣式。
-
-
-
-架手架使用 Codekit.app 運作，npm cli 需自行配置。
 
 
 
