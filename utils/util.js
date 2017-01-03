@@ -7,7 +7,6 @@ function formatTime(date) {
   var minute = date.getMinutes()
   var second = date.getSeconds()
 
-
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
@@ -18,7 +17,7 @@ function formatNumber(n) {
 
 function showError(text) {
   var that = this;
-  var insertData = '<div style="color:red;text-align:center;padding:20px;">'+text+'</div>';
+  var insertData = '<div style="color:red;text-align:center;padding:20px;">' + text + '</div>';
   WxParse.wxParse('insertData', 'html', insertData, that);
 }
 
