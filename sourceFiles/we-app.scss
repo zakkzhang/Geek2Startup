@@ -1,14 +1,13 @@
+@import '_lib_ animate';
 @import 'weui';
 @import 'page';
 @import 'base';
 @import 'appbox';
 @import 'parse';
 @import 'we';
+@import 'animation';
 
-.b {
-  font-weight: 800;
-  color: #0a0a0a;
-}
+// index
 
 .index {
   .head {

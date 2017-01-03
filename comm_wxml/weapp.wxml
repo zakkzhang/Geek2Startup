@@ -44,7 +44,7 @@
 		<view class="title">{{we_data.user_name}}</view>
 		<view class="desc">{{we_data.user_desc}}</view>
 		</view>
-		<view class="avatar text-right">
+		<view class="avatar text-right animated fadeInRight">
 			<image src="{{we_data.user_avatar}}" mode="{{we_data.user_avatar_mode}}" class="weapp_image" />
 		</view>
 	</view>
@@ -85,7 +85,7 @@
 </template>
 
 <template name="appfooter_action">
-  <view class="appfooter app-footer-action weui-footer_fixed-bottom flex-row flex-wrp">
+  <view class="appfooter app-footer-action weui-footer_fixed-bottom flex-row flex-wrp animated fadeInUp">
       <view class="action-icon flex-item text-center" bindtap="barAction" data-action="love">
       	<image src="/image/icon-assets/love.png" />
       	<view class="action-text">喜欢</view>

@@ -10,7 +10,7 @@
     <template is="wxParse" data="{{wxParseData:insertData.nodes}}" />
     <block wx:for="{{article}}" wx:key="index">
 
-    <view class="weui-panel weui-panel_access">
+    <view class="weui-panel weui-panel_access animated fadeInUp">
         <view class="weui-panel__bd">
 
             <!-- LIST START -->
