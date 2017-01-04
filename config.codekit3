@@ -578,26 +578,6 @@
 		"oAP": "\/wx-Develop\/comm_wxml\/wemore.wxml",
 		"oF": 0
 		},
-	"\/wx-Develop\/css\/_base.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/wx-Develop\/css\/_base-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/wx-Develop\/css\/app.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/wx-Develop\/css\/app-min.css",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/wx-Develop\/image\/arrowright.png": {
 		"ft": 32768,
 		"iS": 1363,
