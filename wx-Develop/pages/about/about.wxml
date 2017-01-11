@@ -1,9 +1,9 @@
+<import src="../../comm_wxml/weapp.wxml" />
 
-<import src="../../comm_wxml/weapp.wxml">
   <view class="container">
     <view class="textContainer">
       <text class="textStyle myclass">{{text}}</text>
+      <image src="../../image/fm_play.gif"></image>
     </view>
   </view>
-  <template is="appfooter_logo"></template>
-</import>
+<template is="appfooter_logo"></template>
