@@ -31,7 +31,7 @@ Page({
       "icon": ""
     }, {
       "name": "关于 Geek2Startup",
-      "to": "/pages/about/aboutN",
+      "to": "/pages/about/about",
       "icon": ""
     }]
   },
@@ -67,6 +67,8 @@ Page({
     })
   }
 })
+
+
 
 
 

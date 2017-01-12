@@ -21,4 +21,5 @@
 image {
   height: 11px;
   width: 11px;
+  margin-right: 2px;
 }

@@ -4,6 +4,8 @@
     <view class="textContainer">
       <text class="textStyle myclass">{{text}}</text>
       <image src="../../image/fm_play.gif"></image>
+      <image src="../../image/loading.gif"></image>
+      <image style="width: 110px;" src="../../image/loading-s.gif"></image>
     </view>
   </view>
 <template is="appfooter_logo"></template>
