@@ -1,0 +1,123 @@
+<import src="../../comm_wxml/weapp.wxml"/>
+
+<view class="net overflow-hidden">
+		<view class="head">
+			<text class="title">Network</text>
+			<view class="desciption">Geek2Startup</view>
+		</view>
+
+		<scroll-view class="scroll-view_H user-list" scroll-x="true" style="width: 100%">
+			<!-- me -->
+			<view class="now user-one">
+				<view class="top flex flex-row aitems-center" >
+					<view class="avatar" >
+							<image src="{{userInfo.avatarUrl}}" class="avatar-image" />
+					</view>
+					<view class="text">
+							<view class="area" >
+									<view class="title b" >庫倪</view>
+									<view class="p color-light" >全棧設計師</view>
+							</view>
+					</view>
+				</view>
+			</view>
+			<!-- me-end -->
+
+			<block wx:for="{{[1,2,3,4]}}" >
+			<!-- user -->
+			<view class="user-one">
+				<view class="top flex flex-row aitems-center" >
+					<view class="avatar" >
+							<image src="{{userInfo.avatarUrl}}" class="avatar-image" />
+					</view>
+					<view class="text">
+							<view class="area" >
+									<view class="title b" >庫倪</view>
+									<view class="p color-light" >全棧設計師</view>
+							</view>
+					</view>
+				</view>
+			</view>
+			<!-- user-end -->
+			</block>
+
+		</scroll-view>
+		<!-- user-List-end -->
+
+		<!-- User-More -->
+		<view class="user-more" >
+			<!-- item -->
+			<view class="item" style="margin-top: 0;">
+          <text class="title">库倪</text>
+          <view class="p">全棧設計師，精通前端開發、熟悉後端開發、精通 UI/IxD 設計。 五年的 IT 行業經驗，UI/IxD 設計師。 喜歡 UNIX 一般的命令行提示符的體驗，追求視覺的不多不少，尋找恰好夠用而不會麻煩的產品。一枚 UI 設計師，曾經的 Web 開發者。 </view>
+			</view>
+			<hr/>
+			<view class="item avatar-list">
+				<view class="flex flex-row aitems-flex-end jcontent-flex-end">
+					<view class="flex flex-row" >
+					<image class="like-avatar box-shadow-mini" src="{{userInfo.avatarUrl}}" />
+					<view class="text color-red flex flex-column jcontent-center box-shadow-mini" >
+						<view class="p">32</view>
+						<view class="title" >喜欢</view>
+					</view>
+					<view class="action text color-red box-shadow-big flex flex-column aitems-center jcontent-center">
+						<text class="ti-heart"></text>
+					</view>
+					</view>
+				</view>
+			</view>
+			<view class="item avatar-list">
+				<view class="flex flex-row aitems-flex-end jcontent-flex-end">
+					<view class="text color-bule flex flex-column jcontent-center box-shadow-mini" >
+						<view class="p">4823</view>
+						<view class="title" >查看</view>
+					</view>
+					<view class="action text color-white flex flex-column aitems-center jcontent-center box-shadow-mini">
+						<text class="ti-bookmark"></text>
+						<view class="name" >保存</view>
+					</view>
+				</view>
+			</view>
+			<hr/>
+			<view class="item">
+				<view class="desciption" >Geek 认证</view>
+				<view class="icon-list">
+					<image src="/image/GEEK-assets/Geek.png" />
+					<image src="/image/GEEK-assets/Ted.png" />
+				</view>
+			</view>
+			<hr/>
+			<view class="item">
+				<view class="desciption" >Group</view>
+				<view class="flex flex-row aitems-center jcontent-flex-start" >
+					<view class="icon-list">
+						<image src="/image/GEEK-assets/5ml.png" />
+					</view>
+					<view class="article flex flex-column aitems-flex-start jcontent-flex-start">
+						<view class="title">5ml Studio 样本工作室</view>
+						<view class="p" >專注在「簡單而精美」的解決方案，創造優質的設計體驗。</view>
+					</view>
+				</view>
+			</view>
+			<hr/>
+
+			<view class="item">
+				<view class="article flex-column aitems-flex-start jcontent-flex-start">
+					<view class="desciption" >自选文章</view>
+					<view class="title">想抓住短视频的创业风口？</view>
+					<view class="p">短视频创业这个风口有多热，不用多说大家心里也清楚，但我们依旧要用几个数据来支撑这句话： 靠短视频走红的Papi酱获1200万元投资； 今年9月微博和秒拍宣称将拿出1亿美元扶持短视频； 同月今日头条宣布拿出10亿元补贴短视频创作者。</view>
+				</view>
+			</view>
+			<hr/>
+			<view class="item">
+				<view class="article flex-column aitems-flex-start jcontent-flex-start">
+					<view class="desciption" >媒体文章标题</view>
+					<view class="title">面遍硅谷大公司，热衷分享，他是科技圈网红董老师</view>
+					<view class="p">短视频创业这个风口有多热，不用多说大家心里也清楚，但我们依旧要用几个数据来支撑这句话： 靠短视频走红的Papi酱获1200万元投资； 今年9月微博和秒拍宣称将拿出1亿美元扶持短视频； 同月今日头条宣布拿出10亿元补贴短视频创作者。</view>
+				</view>
+			</view>
+			<hr/>
+
+		</view>
+		<!-- User-More-end -->
+</view>

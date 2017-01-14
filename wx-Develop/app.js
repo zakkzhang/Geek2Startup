@@ -22,6 +22,12 @@ App({
     }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    appData: {
+      "name": "极客吐司+",
+      "version": "0.5",
+    }
   }
 })
+
+

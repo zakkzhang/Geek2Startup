@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/set/set",
+    "pages/discover/discover",
+    "pages/net/net",
     "pages/about/about",
     "pages/apply/apply",
     "pages/article/article",
@@ -21,18 +24,30 @@
         "text": "极客"
       },
       {
-        "iconPath": "image/icon-assets/user.png",
-        "pagePath": "pages/user/index",
-        "selectedIconPath": "image/icon-assets/user_HL.png",
-        "text": "个人资料"
+        "iconPath": "image/icon-assets/net.png",
+        "pagePath": "pages/net/net",
+        "selectedIconPath": "image/icon-assets/net_HL.png",
+        "text": "网络"
+      },
+      {
+        "iconPath": "image/icon-assets/discover.png",
+        "pagePath": "pages/discover/discover",
+        "selectedIconPath": "image/icon-assets/discover_HL.png",
+        "text": "发现"
+      },
+      {
+        "iconPath": "image/icon-assets/set.png",
+        "pagePath": "pages/set/set",
+        "selectedIconPath": "image/icon-assets/set_HL.png",
+        "text": "设定"
       }
     ],
     "selectedColor": "#48C23D"
   },
   "window": {
-    "backgroundColor": "FCF8FE",
+    "backgroundColor": "f9f8fa",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FCF8FE",
+    "navigationBarBackgroundColor": "#f9f8fa",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": " "
   }

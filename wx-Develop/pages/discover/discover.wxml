@@ -1,0 +1,39 @@
+<import src="../../comm_wxml/weapp.wxml"/>
+
+<view class="discover">
+    <view class="head">
+    	<text class="title">Discover</text>
+    	<view class="desciption">Geek2Startup</view>
+    </view>
+    <view class="filter" >
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">{{array[index]}} <text class="ti-angle-down"></text></view>
+      </picker>
+    </view>
+    <view class="article-list">
+    	<!--  -->
+    	<block wx:for="{{[1,2,3,4]}}">
+			<view class="item">
+				<view class="article flex flex-column jcontent-flex-start">
+					<view class="top flex flex-row aitems-flex-start jcontent-flex-start" >
+						<view class="desciption flex" >Geek Jam</view>
+						<view class="date flex aself-flex-end" >17.01.04</view>
+					</view>
+					<view class="title">想抓住短视频的创业风口？</view>
+					<view class="p text-more">短视频创业这个风口有多热，不用多说大家心里也清楚，但我们依旧要用几个数据来支撑这句话：靠短视频走红的Papi酱获1200万元投资；今年9月微博和秒拍宣称将拿出1亿美元扶持短视频；同月今日头条宣布拿出10亿元补贴短视频创作者。</view>
+					<view class="comment flex flex-row aitems-flex-start" >
+						<view class="article-icon flex" >
+							<text class="ti-comment"></text>
+							<view class="inline" >2</view>
+						</view>
+						<view class="comment-icon flex aself-flex-end" >
+							<image src="{{userInfo.avatarUrl}}" mode="aspectFill"/>
+							<image src="{{userInfo.avatarUrl}}" mode="aspectFill"/>
+						</view>
+					</view>
+				</view>
+			</view>
+			</block>
+			<!--  -->
+    </view>
+</view>

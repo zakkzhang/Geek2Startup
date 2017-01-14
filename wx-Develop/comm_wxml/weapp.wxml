@@ -103,11 +103,23 @@
 <template name="appfooter_input">
   <view class="appfooter app-footer-input weui-footer_fixed-bottom flex-row flex-wrp">
       <view class="flex-item flex-autoempty" >
-      	<input placeholder="留言" auto-focus/>
+        <input placeholder="留言" auto-focus/>
       </view>
       <view class="action-icon flex-item text-center" bindtap="barAction" data-action="chat">
-      	<image src="/image/icon-assets/chat.png" />
-      	<view class="action-text">发送</view>
+        <image src="/image/icon-assets/chat.png" />
+        <view class="action-text">发送</view>
+      </view>
+  </view>
+</template>
+
+<template name="appfooter_input">
+  <view class="appfooter app-footer-input weui-footer_fixed-bottom flex-row flex-wrp">
+      <view class="flex-item flex-autoempty" >
+        <input placeholder="留言" auto-focus/>
+      </view>
+      <view class="action-icon flex-item text-center" bindtap="barAction" data-action="chat">
+        <image src="/image/icon-assets/chat.png" />
+        <view class="action-text">发送</view>
       </view>
   </view>
 </template>

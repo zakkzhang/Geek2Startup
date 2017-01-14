@@ -105,3 +105,25 @@ mainStyle 下的 we-app.scss 會自動轉換為 we-app.wxss，we-app.wxss 將會
 
 * api.js：封裝與 api 通信的辦法（未啟用）
 * util.js：零碎的各種組件
+
+
+
+## Git 簡易說明
+
+##### 簽出項目
+
+`git clone https://github.com/zakkzhang/Geek2Startup.git`
+
+##### 更新項目
+
+`git pull`
+
+##### 刪除未提交的更改
+
+https://www.v2ex.com/t/66718
+
+http://blog.csdn.net/cankingapp/article/details/18312117
+
+##### 參考
+
+http://gitref.org/zh/remotes/

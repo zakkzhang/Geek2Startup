@@ -88,24 +88,3 @@
 	}
 
 }
-
-.flex-row {
-	flex-direction: row;
-}
-
-.flex-wrp {
-	height: 48px;
-	display: flex;
-}
-
-.flex-item {
-	width: 48px;
-	height: 48px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.flex-autoempty {
-	flex: 1;
-}

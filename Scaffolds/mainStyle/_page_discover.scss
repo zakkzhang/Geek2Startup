@@ -1,0 +1,69 @@
+// discover
+
+.discover {
+	.article-list,.filter {
+		padding: 15px;
+	}
+
+	.filter {
+		text-align: center;
+		padding-bottom: 0;
+		padding-top: 30px;
+	}
+
+	.item {
+		background-color: #fff;
+		padding: 15px;
+		border-radius: 4px;
+		margin-bottom: 25px;
+		box-shadow: 0px 16px 32px rgba(0,0,0,0.12);
+
+		.desciption {
+			flex: 1;
+			width: 100%;
+		}
+
+		.date {
+			font-size: 10px;
+			margin-bottom: 0.5em;
+		}
+
+		$margin: 10px;
+
+		.comment,.top {
+			margin-top: $margin;
+			margin-bottom: $margin;
+		}
+		.comment {
+			margin-bottom: 0;
+		}
+
+		$commentSize: 24px;
+
+		.article-icon {
+			flex: 1;
+			text {
+				line-height: $commentSize;
+				font-size: 16px;
+				color: #39C560;
+			}
+			.inline {
+				padding-left: 5px;
+				line-height: $commentSize;
+				font-size: 10px;
+			}
+		}
+
+		.comment-icon {
+			image {
+				margin-left: 5px;
+				height: $commentSize;
+				width: $commentSize;
+				border-radius: 4px;
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,27 @@
+<import src="../../comm_wxml/weapp.wxml"/>
+
+<view class="flex flex-column" style="height: 100%;">
+	<view class="set">
+		<view class="set-list">
+			<block wx:for="{{setting}}" wx:key="" >
+				<view class="title" wx:if="{{item.isTitle}}">{{item.title}}</view>
+				<block wx:if="{{item.isTitle == false}}">
+					<view class="item flex flex-row" >
+						<view class="name">{{item.name}}</view>
+						<switch wx:if="{{item.isSwitch}}" bindchange="switch2Change"/>
+						<block wx:if="{{item.isSwitch == false}}">
+							<text class="ti-angle-right"></text>
+						</block>
+					</view>
+				</block>
+			</block>
+		</view>
+
+	</view>
+
+	<view class="footer">
+		<view>{{appData.name}}</view>
+		<view>{{appData.version}}</view>
+	</view>
+
+</view>
