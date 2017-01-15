@@ -1,16 +1,17 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/set/set",
-    "pages/discover/discover",
+    "pages/index/video",
+    "pages/index/profile",
     "pages/net/net",
-    "pages/about/about",
-    "pages/apply/apply",
-    "pages/article/article",
-    "pages/video/video",
-    "pages/user/index",
-    "pages/user_page/user_page",
-    "pages/user_edit/user_edit"
+    "pages/net/group",
+    "pages/discover/discover",
+    "pages/discover/article",
+    "pages/set/set",
+    "pages/set/about",
+    "pages/set/clean",
+    "pages/set/camera",
+    "pages/set/apply"
   ],
   "tabBar": {
     "backgroundColor": "#fff",

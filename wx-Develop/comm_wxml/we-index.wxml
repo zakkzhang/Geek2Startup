@@ -1,0 +1,109 @@
+<template name="index-box">
+  <!-- Video -->
+  <block wx:if="{{weData.display == 'video'}}" >
+
+    <navigator url="/pages/index/video?video={{weData.address}}" hover-class="navigator-hover">
+
+      <view class="padding-l row" >
+        <view class="icon">
+          <text class="{{weData.icon}}"></text>
+        </view>
+
+        <view class="text"  >
+          <text class="one">{{weData.name}}</text>
+          <text class="notice">{{weData.time}}</text>
+        </view>
+      </view>
+
+    </navigator>
+
+  </block>
+
+  <!-- box -->
+  <block wx:if="{{weData.display == 'text'}}" >
+
+    <navigator url="/pages/index/profile?id={{weData.id}}" hover-class="navigator-hover">
+
+      <view class="row padding-l" >
+        <view class="icon">
+          <text class="{{weData.icon}}"></text>
+        </view>
+        <view class="text">
+          <text class="title">{{weData.name}}</text>
+          <view class="p">{{weData.text}} </view>
+        </view>
+      </view>
+
+    </navigator>
+  </block>
+  <!-- box-end -->
+
+  <!-- box -->
+  <block wx:if="{{weData.display == 'link'}}" >
+
+    <navigator url="/pages/discover/article?id={{weData.id}}" hover-class="navigator-hover">
+
+      <view class="padding-l row" >
+        <view class="icon">
+          <text class="{{weData.icon}}"></text>
+        </view>
+        <view class="text">
+          <text class="title">{{weData.name}}</text>
+          <view class="p">{{weData.text}}</view>
+        </view>
+      </view>
+
+    </navigator>
+
+  </block>
+  <!-- box-end -->
+
+  <!-- box -->
+  <block wx:if="{{weData.display == 'authenticate'}}" >
+    <view class="padding-l row" >
+      <view class="text no-icon">
+        <view class="icon-list" >
+          <block wx:for="{{weData.list}}" wx:key="" >
+            <image src="{{item.image}}" />
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- box-end -->
+
+  <!-- box -->
+  <block wx:if="{{weData.display == 'group'}}" >
+
+    <navigator url="/pages/net/group?id={{weData.id}}" hover-class="navigator-hover">
+
+      <view class="padding-l row" >
+        <view class="icon">
+          <text class="{{weData.icon}}"></text>
+        </view>
+        <view class="text">
+          <text class="title">{{weData.name}}</text>
+          <view class="p">{{weData.text}}</view>
+        </view>
+      </view>
+
+    </navigator>
+
+  </block>
+  <!-- box-end -->
+
+  <!-- box -->
+  <block wx:if="{{weData.display == 'invite'}}" >
+  <navigator url="/pages/index/profile?id={{weData.id}}" hover-class="navigator-hover">
+      <view class="padding-l row" >
+        <view class="text no-icon">
+          <text class="title">{{weData.name}}</text>
+          <view class="p">{{weData.text}}</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- box-end -->
+
+</template>
+

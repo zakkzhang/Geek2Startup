@@ -1,13 +1,12 @@
 /** base **/
-video {
-  width: 100%;
-  height: auto; }
-
 hr {
   height: 1px;
   width: 100%;
   background-color: #eee;
   display: block; }
+
+.flex-1 {
+  flex: 1; }
 
 .flex {
   display: flex; }
@@ -208,57 +207,6 @@ hr {
 
 .color-green {
   color: #48C23D; }
-
-.appbox {
-  margin: 0 50rpx;
-  padding: 50rpx 0 25rpx;
-  border-bottom: 1px #eee solid; }
-  .appbox .weui-article__title {
-    margin-bottom: 0.5em;
-    font-weight: 400;
-    font-size: 0.8em;
-    color: #aaa; }
-  .appbox .weui-article__p {
-    padding-left: 1em; }
-  .appbox .keyword {
-    color: #aaa;
-    font-weight: 800; }
-
-.appbox-photo .photos {
-  width: 100%;
-  height: 240rpx;
-  margin: 4rpx; }
-
-.app-footer-input .action-icon image {
-  height: 24px;
-  width: 24px; }
-.app-footer-input .action-text {
-  margin-top: 2px;
-  font-size: 0.6em;
-  text-align: center;
-  font-weight: 800; }
-.app-footer-input .flex-item {
-  text-align: left; }
-.app-footer-input input {
-  width: 100%;
-  font-size: 12px;
-  margin-left: 6px; }
-
-.app-footer-action .action-icon image {
-  height: 24px;
-  width: 24px; }
-.app-footer-action .action-text {
-  margin-top: 2px;
-  font-size: 0.6em;
-  text-align: center;
-  font-weight: 800; }
-.app-footer-action .text-right {
-  padding-right: 1em; }
-.app-footer-action .flex-autoempty {
-  text-align: right !important;
-  justify-content: flex-end; }
-  .app-footer-action .flex-autoempty .action-text {
-    padding-right: 12px; }
 
 .Parse {
   padding-bottom: 100rpx; }
@@ -1447,6 +1395,44 @@ page {
   background-repeat: repeat-x;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkQAAACgCAMAAADadIPVAAABsWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE3IChNYWNpbnRvc2gpIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+9hhAPQAAAARnQU1BAACxjwv8YQUAAAABc1JHQgCuzhzpAAABaFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+5YjZ9AAAAd3RSTlMA/FntDH/ED1jF53EO+2QabLrAATrG6Frm0cdb7BBrGIDq71xqFwb5tbbB5bi5ps27dkduTAk7vA1dqqzCM4Wy4QOUgtJ4/n741D/0YhGKRCSRtD4gv5Dbl1R6e0IKyXNKT6VpVQhXQMvjcJ2Z8x5GpFZQ4gc5yNuk+Y8AAATOSURBVHja7d35XxNHGMfxFEI2gSAGAoKoCPUABe+79eh9qb3vu9pWe6q1/f77hgTTrLYpuzObPpP5vH8xuz+sr9fky7wmk8nzlEoAAAAAAAAAAAAAAAAAAAAAAAAAAABAZEYWbs8wCnDK0DPSwrfECE4Z+u6udOcbhgL5MzRW+v70uDT7NqOBPKqbGWo5+/Wy9PybDAhyZ6il/Moe6fw5xgS5M9RSf21FusqoIGOG9qdu7H1RbzAscMlQa5mt5xgXbN8PT2eo9JKuMDDYvgXde+reJS1mfk5zrd6zrlptMrIRua8/Hj5572VdzvycDdWSx6+TmtYZ2YjMLGjfE7deeP3VcubnJLu1O+m+/DtQiMEDHT2bvvOOruV4Tmv66aSIDEU4FR3XRPrOGW3keVC9ohOb/55Xpc6wRuaM5r5M3Tipd3M9aGs5fW7twrANkURM/sNXOpm6/lm3GBRClM0pLafmjpp+ZFAIUUY1fdZ7uaIlxoQQZfSFRtsfp2Y+OPXTL0eWtcKQEKLMpvXRp58fO/6W2n49xogQosze76RHcx9+cvr333I+JGl0vutoNhJCFKP1j9+7eb15w+URyV9abb9Y7W5dA9kyNKtaZ4+xXtMsKUK+DCX/8BrYtrXe2aeVorWhWAm1/cslvGuu9849ycafhAgAAHSVJ6ZHNTo9UWYoAl8d/X//967xrcXY+C7eCEKUy5hUG1kqLY3U1PsTUxCi7c9Dmnx8BH7fpJ7lrSBE2ddDc9rRvdihPXt5LwhRVjtV6bmqaCfvBSHKqqGRnquqGrwXhCirozrYczWled4LZHU4ld5DOsyQIKt5kzMRXyAGpaFqak10ghAZEFi1bpufziIPkcVq3f2K8tjcJ4o7RCardfctyrOoyQNbLw9M6mKJEBnIkMFq3f2L8oxJlerUoalqxc53ZzGHyGq17v5FeRa73+Kb+eYs4hDZrdbdvyhPeeII54nsZahkrVr38BblGboM7U/doFq3bQYPdFKt28NKaJA/fjF4oJNq3YGFyOKBTl/VujEYJg90+qrWjcGsh0xu1Puq1l2MIS7Kk4/RA52+qnUXkqHQivIUvtlo9ECnt2rdBWQouKI8hYfI6oFOb9W6i8hQYEV5Cg+R2QOdVqt1B1iUp/AQzVs9Wm61WneARXkGsCayeKCzkxqqdQcSIrs/t6NadzAhMvzDX6p1B8Pkgc42L9W6MRAWD3R2eKjWjUHNRfYOdCI4HOhEJwcUCoQbCgXCw9qYQoFwm4coFAjX9RCFAuGKQoFwRqFAOKNQIJxFXCiQ7TFf5qOdidge87gmsnqurGBsj/HpzHkeYnvM48Igzn0itse8snuujAk4qMWB0XNlhS4F2R7zOxdFeK6M7THvC4T4zpXRRwPOgtoeC6wzQDRC2h6z2BkAYX06M9kZAKWQ9olsdgZA+yNpINtjVjsDYFMY22N2OwOgPRcFsD1muTMA2n/a5rfH6AzgW3ztbugMQIhc0RmAEDmjMwAhckZnAELkzHZnAEIUBsudAQhRKFOR3c4ACIbZzgAIiNXOAAiI1c4Awa2EBtmM1Bw6AxAiZ3QGgDs6A8AZnQHgjs4AfldHjAEIEQgRCBFAiECIQIgAAAAAAAAAAAAAAAAAAAAAAACAvB4B22N6DuBNOS0AAAAASUVORK5CYII="); }
 
+.video .head,
+.video .meta {
+  padding: 15px; }
+.video hr,
+.video .top,
+.video .mid,
+.video .main {
+  margin-bottom: 15px; }
+.video .video-view {
+  width: 345px;
+  height: 200px; }
+.video .head {
+  background-color: #101117;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; }
+.video .avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
+.video .action {
+  padding: 4px;
+  width: 64px;
+  margin: 4px;
+  text-align: center;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  color: #39C560;
+  font-weight: 800;
+  margin-left: 0; }
+.video .avatar-box {
+  margin-right: 8px; }
+
 .net .head {
   background-position: bottom;
   background-size: 50%;
@@ -1583,6 +1569,34 @@ page {
       font-size: 12px; }
     .set-list .item text {
       line-height: 32px; }
+
+.Parse {
+  padding-bottom: 100rpx; }
+
+.wxParse-p {
+  padding: 0 50rpx;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  text-indent: 2em;
+  line-height: 1.8em;
+  font-size: 1em; }
+
+.wxParse-blockquote {
+  font-family: serif;
+  color: #888;
+  font-size: 0.8em;
+  border-left: 2px #55BF46 solid; }
+
+.wxParse-strong {
+  font-weight: 800;
+  color: #333 !important; }
+
+.wxParse-img {
+  width: 100%;
+  background: none;
+  background-color: none;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em; }
 
 .head {
   padding: 50rpx;

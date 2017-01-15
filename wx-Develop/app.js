@@ -1,7 +1,10 @@
-//app.js
+var api = require('/utils/api.js')
+var nApi = new api();
+
 App({
   onLaunch: function() {
-
+    var that = this
+    nApi.login();
   },
   getUserInfo: function(cb) {
     var that = this
@@ -23,6 +26,8 @@ App({
   },
   globalData: {
     userInfo: null,
+    openid: null,
+    server: null,
     appData: {
       "name": "极客吐司+",
       "version": "0.5",

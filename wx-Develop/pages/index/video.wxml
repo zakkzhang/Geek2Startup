@@ -1,0 +1,25 @@
+<view class="video">
+	<view class="head">
+		<video class="video-view"src="{{src}}"objectFit="cover"controls ></video>
+	</view>
+	<view class="meta">
+		<view class="top flex flex-row">
+			<view class="flex-1 b">video name</view>
+			<view>20, 323 views</view>
+		</view>
+		<hr/>
+		<view class="mid flex flex-row">
+			<view class="flex flex-row flex-1">
+				<view class="avatar-box"><image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM4ZyQOVJYd1uLJVniaD1icib8icX5ZYZbL00Jby4DBdgXKXBibe9Hk7FsR0bkdCHGCvvMQ0EicgKsyN0zkg/0" /></view>
+				<view class="flex flex-column jcontent-center aitems-flex-start" >
+					<view class="title b" >username</view>
+					<view class="p color-light" >username</view>
+				</view>
+			</view>
+		</view>
+		<hr/>
+		<view class="main article" >
+			<view>subtile</view>
+		</view>
+	</view>
+</view>

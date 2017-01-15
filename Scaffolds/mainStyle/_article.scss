@@ -1,0 +1,32 @@
+.Parse {
+	padding-bottom: 100rpx;
+}
+
+.wxParse-p {
+	padding: 0 50rpx;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+	text-indent: 2em;
+	line-height: 1.8em;
+	font-size: 1em;
+}
+
+.wxParse-blockquote {
+	font-family: serif;
+	color: #888;
+	font-size: 0.8em;
+	border-left: 2px #55BF46 solid;
+}
+
+.wxParse-strong {
+	font-weight: 800;
+	color: #333 !important;
+}
+
+.wxParse-img {
+	width: 100%;
+	background: none;
+	background-color: none;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}

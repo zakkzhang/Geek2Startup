@@ -1,0 +1,22 @@
+{
+  "app": {
+    "wx": {
+      "session_key": "BCe6Gh8dwVMK1AIfwoMqBw==",
+      "expires_in": 2592000,
+      "openid": "orRHq0Fejs-DeiffnqYGIT75ec6A"
+    },
+    "req": {
+      "body": {
+        "orRHq0Fejs-DeiffnqYGIT75ec6A": {
+          "nickName": "庫倪",
+          "gender": 1,
+          "language": "zh_TW",
+          "city": "Zhaoqing",
+          "province": "Guangdong",
+          "country": "CN",
+          "avatarUrl": "http://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM4ZyQOVJYd1uLJVniaD1icib8icX5ZYZbL00Jby4DBdgXKXBibe9Hk7FsR0bkdCHGCvvMQ0EicgKsyN0zkg/0"
+        }
+      }
+    }
+  }
+}

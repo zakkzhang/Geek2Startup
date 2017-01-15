@@ -2,14 +2,6 @@
 
 // reset wx
 
-view {
-  // overflow: hidden;
-}
-
-video {
-  width: 100%;
-  height: auto;
-}
 
 hr {
   height: 1px;
@@ -19,6 +11,10 @@ hr {
 }
 
 // flex
+
+.flex-1 {
+  flex: 1;
+}
 
 .flex {
   display: flex;

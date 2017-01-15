@@ -1,0 +1,38 @@
+<import src="../../comm_wxml/we-index.wxml"/>
+
+<view class="index overflow-hidden">
+    <view class="head"></view>
+    <view class="avatar flex flex-row aitems-flex-start" >
+        <view class="ai" >
+            <image src="{{userInfo.avatarUrl}}" mode="{{we_data.user_avatar_mode}}" class="avatar_image" />
+        </view>
+        <view class="text">
+            <view class="area flex flex-column aitems-flex-start jcontent-flex-end" >
+                <view class="self black b" >{{userInfo.nickName}}</view>
+                <view class="self black color-light" >{{user.head.title}}</view>
+                <view class="self black color-light" >{{user.head.desc}}</view>
+            </view>
+        </view>
+    </view>
+    <block wx:for="{{user.body}}" wx:key="" >
+        <hr/>
+        <template is="index-box" data="{{weData:item}}" />
+    </block>
+
+    <block wx:for="{{user.more}}" wx:key="" >
+        <hr/>
+        <template is="index-box" data="{{weData:item}}" />
+    </block>
+
+    <hr/>
+    <view class="padding-l row flex" >
+        <view class="text no-icon">
+            <text class="title">{{user.like.name}}</text>
+            <view class="p">{{user.like.text}}</view>
+        </view>
+        <view class="text no-icon">
+            <text class="title">{{user.views.name}}</text>
+            <view class="p">{{user.views.text}}</view>
+        </view>
+    </view>
+</view>

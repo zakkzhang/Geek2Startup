@@ -1,4 +1,4 @@
-<import src="../../comm_wxml/weapp.wxml"/>
+<import src="../../comm_wxml/we-index.wxml"/>
 
 <view class="index overflow-hidden">
     <view class="head"></view>
@@ -8,32 +8,17 @@
         </view>
         <view class="text">
             <view class="area flex flex-column aitems-flex-start jcontent-flex-end" >
-                <view class="self black b" >庫倪</view>
-                <view class="self black color-light" >全棧設計師</view>
-                <view class="self black color-light" >現在全職打理樣本工作室</view>
+                <view class="self black b" >{{userInfo.nickName}}</view>
+                <view class="self black color-light" >{{user.head.title}}</view>
+                <view class="self black color-light" >{{user.head.desc}}</view>
             </view>
         </view>
     </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="icon">
-            <text class="ti-video-camera"></text>
-        </view>
-        <view class="text">
-            <text class="one">視頻介紹</text>
-            <text class="notice">0:40</text>
-        </view>
-    </view>
-    <hr/>
-    <view class="row padding-l" >
-        <view class="icon">
-            <text class="ti-id-badge"></text>
-        </view>
-        <view class="text">
-            <text class="title">库倪</text>
-            <view class="p">全棧設計師，精通前端開發、熟悉後端開發、精通 UI/IxD 設計。 五年的 IT 行業經驗，UI/IxD 設計師。 喜歡 UNIX 一般的命令行提示符的體驗，追求視覺的不多不少，尋找恰好夠用而不會麻煩的產品。一枚 UI 設計師，曾經的 Web 開發者。 </view>
-        </view>
-    </view>
+    <block wx:for="{{user.body}}" wx:key="" >
+        <hr/>
+        <template is="index-box" data="{{weData:item}}" />
+    </block>
+
     <hr/>
     <view class="action padding-l flex" >
         <view class="button">
@@ -54,64 +39,22 @@
             </view>
             <view class="name" >申請認證</view>
         </view>
+    </view>
 
-    </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="icon">
-            <text class="ti-world"></text>
-        </view>
-        <view class="text">
-            <text class="title">想抓住短视频的创业风口？来看看这位开发者社区的老兵是怎么做的 </text>
-            <view class="p">Zakk于1967年1月14日生于Bayonne，在新泽西州的Jackson市长大。他本名Jeffery Philip Wielandt，父母名叫Jerome Wielandt，有个姐姐名叫Amy。Zakk的父亲给了他一个昵称叫“Flip”，是其中间的名字Philip的简称，他的朋友和家人就是这样叫他的。 </view>
-        </view>
-    </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="icon">
-            <text class="ti-layout-media-overlay"></text>
-        </view>
-        <view class="text">
-            <text class="title">面遍硅谷大公司，热衷分享，他是科技圈网红董老师</text>
-            <view class="p">吐司君今年夏天前往硅谷，拜访了董飞，并对他进行了采访，深入了解了他的经历，听他娓娓道来他心中的开源和分享。</view>
-        </view>
-    </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="text no-icon">
-            <view class="icon-list" >
-                <image src="/image/GEEK-assets/5ml.png" />
-                <image src="/image/GEEK-assets/Geek.png" />
-                <image src="/image/GEEK-assets/Ted.png" />
-            </view>
-        </view>
-    </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="icon">
-            <text class="ti-control-record"></text>
-        </view>
-        <view class="text">
-            <text class="title">5ml Studio</text>
-            <view class="p">樣本工作室，專注在「簡單而精美」的解決方案，創造優質的設計體驗。</view>
-        </view>
-    </view>
-    <hr/>
-    <view class="padding-l row" >
-        <view class="text no-icon">
-            <text class="title">推荐人</text>
-            <view class="p">李涛</view>
-        </view>
-    </view>
+    <block wx:for="{{user.more}}" wx:key="" >
+        <hr/>
+        <template is="index-box" data="{{weData:item}}" />
+    </block>
+
     <hr/>
     <view class="padding-l row flex" >
         <view class="text no-icon">
-            <text class="title">喜欢</text>
-            <view class="p">32</view>
+            <text class="title">{{user.like.name}}</text>
+            <view class="p">{{user.like.text}}</view>
         </view>
         <view class="text no-icon">
-            <text class="title">查看次数</text>
-            <view class="p">128</view>
+            <text class="title">{{user.views.name}}</text>
+            <view class="p">{{user.views.text}}</view>
         </view>
     </view>
 </view>

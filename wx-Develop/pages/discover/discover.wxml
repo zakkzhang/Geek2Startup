@@ -1,4 +1,3 @@
-<import src="../../comm_wxml/weapp.wxml"/>
 
 <view class="discover">
     <view class="head">
@@ -12,7 +11,7 @@
     </view>
     <view class="article-list">
     	<!--  -->
-    	<block wx:for="{{[1,2,3,4]}}">
+    	<block wx:for="{{[1,2,3,4]}}" wx:key="" >
 			<view class="item">
 				<view class="article flex flex-column jcontent-flex-start">
 					<view class="top flex flex-row aitems-flex-start jcontent-flex-start" >

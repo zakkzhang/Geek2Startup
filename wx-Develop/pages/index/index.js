@@ -1,14 +1,16 @@
 //index.js
 //获取应用实例
-var WxParse = require('../../wxParse/wxParse.js');
-
 var app = getApp()
+var api = require('../../utils/api.js')
+var nApi = new api();
 
 Page({
   data: {
     userInfo: {},
+    server: app.globalData.server,
+    openid: app.globalData.openid
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: app.globalData.appData.name,
       desc: '分享一名极客给你看看',
@@ -16,22 +18,30 @@ Page({
     }
   },
   onLaunch: function() {
-    console.log('onLaunch')
+    //console.log('onLaunch')
+
   },
   onReady: function() {
     // 页面渲染完成
     // wx.hideNavigationBarLoading()
   },
   onShow: function() {
-    console.log('onShow')
+    //console.log('onShow')
   },
   onHide: function() {
-    console.log('onHide')
+    //console.log('onHide')
   },
   onLoad: function() {
     wx.showNavigationBarLoading()
-    console.log('onLoad')
+    //console.log('onLoad')
     var that = this;
+
+    nApi.api('api/index',function(r) {
+      wx.hideNavigationBarLoading()
+      that.setData({
+        user: r
+      })
+    });
 
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo) {
@@ -42,6 +52,30 @@ Page({
     })
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

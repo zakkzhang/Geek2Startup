@@ -1,3 +1,5 @@
+// var WxParse = require('../wxParse/wxParse.js');
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -16,9 +18,9 @@ function formatNumber(n) {
 }
 
 function showError(text) {
-  var that = this;
-  var insertData = '<div style="color:red;text-align:center;padding:20px;">' + text + '</div>';
-  WxParse.wxParse('insertData', 'html', insertData, that);
+  // var that = this;
+  // var insertData = '<div style="color:red;text-align:center;padding:20px;">' + text + '</div>';
+  // WxParse.wxParse('insertData', 'html', insertData, that);
 }
 
 function isEmptyObject(obj) {
@@ -28,8 +30,22 @@ function isEmptyObject(obj) {
   return true;
 }
 
+function isNotFound(obj, callback) {
+  var e = 0;
+  if (typeof obj == "string") {
+    e++;
+    if (obj.indexOf("404 Not Found") != -1) {
+      e++;
+    }
+  }
+  (callback && typeof(callback) === "function") && callback(e);
+}
+
 module.exports = {
   formatTime: formatTime,
   showError: showError,
-  isEmptyObject: isEmptyObject
+  isEmptyObject: isEmptyObject,
+  isNotFound: isNotFound
 }
+
+

@@ -30,34 +30,46 @@ Page({
       "isTitle": true
     }, {
       "name": "申请邀请码",
-      "to": "/pages/apply/apply",
+      "to": "/pages/set/apply",
+      "icon": "",
+      "isSwitch": false,
+      "isTitle": false
+    }, {
+      "name": "扫描二维码",
+      "to": "/pages/set/camera",
+      "icon": "",
+      "isSwitch": false,
+      "isTitle": false
+    }, {
+      "name": "清理本地数据",
+      "to": "/pages/set/clean",
       "icon": "",
       "isSwitch": false,
       "isTitle": false
     },{
       "name": "关于 " + app.globalData.appData.name,
-      "to": "/pages/about/about",
+      "to": "/pages/set/about",
       "icon": "",
       "isSwitch": false,
       "isTitle": false
     }]
   },
   onLaunch: function() {
-    console.log('onLaunch')
+    //console.log('onLaunch')
   },
   onReady: function() {
     // 页面渲染完成
     wx.hideNavigationBarLoading()
   },
   onShow: function() {
-    console.log('onShow')
+    //console.log('onShow')
   },
   onHide: function() {
-    console.log('onHide')
+    //console.log('onHide')
   },
   onLoad: function() {
     wx.showNavigationBarLoading()
-    console.log('onLoad')
+    //console.log('onLoad')
 
     var that = this
       //调用应用实例的方法获取全局数据
@@ -74,6 +86,24 @@ Page({
     })
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

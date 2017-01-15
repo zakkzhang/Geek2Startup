@@ -1,4 +1,4 @@
-<import src="../../comm_wxml/weapp.wxml"/>
+<import src="../../comm_wxml/we-net.wxml"/>
 
 <view class="net overflow-hidden">
 		<view class="head">
@@ -15,7 +15,7 @@
 					</view>
 					<view class="text">
 							<view class="area" >
-									<view class="title b" >庫倪</view>
+									<view class="title b" >{{userInfo.nickName}}</view>
 									<view class="p color-light" >全棧設計師</view>
 							</view>
 					</view>
@@ -23,7 +23,7 @@
 			</view>
 			<!-- me-end -->
 
-			<block wx:for="{{[1,2,3,4]}}" >
+			<block wx:for="{{[1,2,3,4]}}" wx:key="" >
 			<!-- user -->
 			<view class="user-one">
 				<view class="top flex flex-row aitems-center" >

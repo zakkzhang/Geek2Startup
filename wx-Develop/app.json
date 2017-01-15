@@ -1,54 +1,55 @@
 {
-"pages": [
-	"pages\/index\/index",
-	"pages\/set\/set",
-	"pages\/discover\/discover",
-	"pages\/net\/net",
-	"pages\/about\/about",
-	"pages\/apply\/apply",
-	"pages\/article\/article",
-	"pages\/video\/video",
-	"pages\/user\/index",
-	"pages\/user_page\/user_page",
-	"pages\/user_edit\/user_edit"
-	],
-"tabBar": {
-	"backgroundColor": "#fff",
-	"borderStyle": "white",
-	"color": "#404040",
-	"list": [
-		{
-			"iconPath": "image\/icon-assets\/home.png",
-			"pagePath": "pages\/index\/index",
-			"selectedIconPath": "image\/icon-assets\/home_HL.png",
-			"text": "极客"
-			},
-		{
-			"iconPath": "image\/icon-assets\/net.png",
-			"pagePath": "pages\/net\/net",
-			"selectedIconPath": "image\/icon-assets\/net_HL.png",
-			"text": "网络"
-			},
-		{
-			"iconPath": "image\/icon-assets\/discover.png",
-			"pagePath": "pages\/discover\/discover",
-			"selectedIconPath": "image\/icon-assets\/discover_HL.png",
-			"text": "发现"
-			},
-		{
-			"iconPath": "image\/icon-assets\/set.png",
-			"pagePath": "pages\/set\/set",
-			"selectedIconPath": "image\/icon-assets\/set_HL.png",
-			"text": "设定"
-			}
-		],
-	"selectedColor": "#48C23D"
-	},
-"window": {
-	"backgroundColor": "f9f8fa",
-	"backgroundTextStyle": "light",
-	"navigationBarBackgroundColor": "#f9f8fa",
-	"navigationBarTextStyle": "black",
-	"navigationBarTitleText": " "
-	}
+  "pages" : [
+    "pages\/index\/index",
+    "pages\/index\/video",
+    "pages\/index\/profile",
+    "pages\/net\/net",
+    "pages\/net\/group",
+    "pages\/discover\/discover",
+    "pages\/discover\/article",
+    "pages\/set\/set",
+    "pages\/set\/about",
+    "pages\/set\/clean",
+    "pages\/set\/camera",
+    "pages\/set\/apply"
+  ],
+  "tabBar" : {
+    "selectedColor" : "#48C23D",
+    "backgroundColor" : "#fff",
+    "borderStyle" : "white",
+    "list" : [
+      {
+        "iconPath" : "image\/icon-assets\/home.png",
+        "selectedIconPath" : "image\/icon-assets\/home_HL.png",
+        "pagePath" : "pages\/index\/index",
+        "text" : "极客"
+      },
+      {
+        "iconPath" : "image\/icon-assets\/net.png",
+        "selectedIconPath" : "image\/icon-assets\/net_HL.png",
+        "pagePath" : "pages\/net\/net",
+        "text" : "网络"
+      },
+      {
+        "iconPath" : "image\/icon-assets\/discover.png",
+        "selectedIconPath" : "image\/icon-assets\/discover_HL.png",
+        "pagePath" : "pages\/discover\/discover",
+        "text" : "发现"
+      },
+      {
+        "iconPath" : "image\/icon-assets\/set.png",
+        "selectedIconPath" : "image\/icon-assets\/set_HL.png",
+        "pagePath" : "pages\/set\/set",
+        "text" : "设定"
+      }
+    ],
+    "color" : "#404040"
+  },
+  "window" : {
+    "navigationBarTitleText" : " ",
+    "backgroundTextStyle" : "light",
+    "navigationBarTextStyle" : "black",
+    "backgroundColor" : "f9f8fa",
+    "navigationBarBackgroundColor" : "#f9f8fa"
+  }
 }

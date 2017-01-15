@@ -1,0 +1,9 @@
+<view class="container">
+	<view class="textContainer">
+		<button bindtap="onCamera" >喚醒攝像頭</button>
+		<button bindtap="onClean" >清理數據</button>
+		<button bindtap="reFresh" >刷新</button>
+		<button bindtap="onLogin" >重新登入</button>
+		<text class="textStyle">{{qr_return}}</text>
+	</view>
+</view>
