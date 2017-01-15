@@ -1,0 +1,10 @@
+include include/head
+include include/menu
+#login
+.pure-g
+	.pure-u-1.text-center.padding
+		p
+			img(src="/qrcode")
+		h5= qrurl
+		h5(id="session") #{session}
+		h5 "#{socketid}"

@@ -1,25 +1,8 @@
-doctype html
-html(lang="en")
-	head
-		title= pageTitle
-		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/base-min.css')
-		link(rel='stylesheet', href='http://yui.yahooapis.com/pure/0.5.0/pure-min.css')
-		link(rel='stylesheet', href='/css/style.css')
-		script(src='//cdn.bootcss.com/jquery/3.1.1/jquery.min.js')
-		script(src='/js/socket.io-1.4.5.js')
-		script(src='/js/client.js')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-	body
-		.pure-menu.pure-menu-open.pure-menu-horizontal
-			a.pure-menu-heading(href='#') WeApp 管理後台
-			ul
-				li.pure-menu-selected
-					a(href='#') Home
-				li
-					a(href='#') Flickr
-		.pure-g
-			.pure-u-1.text-center.padding
-				h5= qrurl
-				p
-					img(src="./qrcode")
-				p(id="session") #{session}
+include include/head
+include include/menu
+#index
+.pure-g
+	.pure-u-1.text-center.padding
+		h5 Need Login.
+		h5 #{ssid}
+		h5 #{ssdo} = #{socketid}

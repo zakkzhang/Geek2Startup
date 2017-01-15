@@ -1,12 +1,24 @@
 $(document).ready(function() {
-	var socket = io.connect('http://localhost:5001');
-	socket.on('qr', function(data) {
+	var socket = io.connect('http://localhost:5000');
+	socket.on('hello', function(data) {
 		console.log(data);
-		var id = $("#session").text();
-
-		socket.emit('connect', {
-			"session": id
-		});
-		console.log(id);
 	});
+	if (document.getElementById("login")) {
+		console.log("isLogin");
+		var session = $("#session").text();
+		var socket = io.connect('http://localhost:5000');
+		socket.on('qr', function(data) {
+			console.log(data);
+
+			socket.emit('onConnect', {
+				"session": session
+			});
+
+			socket.emit('login', {
+				"name": session
+			});
+			console.log(session);
+		});
+	}
+
 });

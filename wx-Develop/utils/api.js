@@ -2,12 +2,11 @@
 var app = getApp()
 	// var util = require('util.js')
 
-var isDev = true;
-var server = "https://app.geek2startup.com/fake-api";
+var server;
 
-if (isDev) {
-	server = "http://192.168.1.155:7000";
-};
+server = "https://app.geek2startup.com/fake-api";
+server = "http://app.geek2startup.com:5000";
+// server = "http://192.168.1.155:7000";
 
 var openid;
 

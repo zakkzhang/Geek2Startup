@@ -2,20 +2,23 @@
 
 var express = require('express');
 var session = require('express-session')
-const uuidV4 = require('uuid/v4');
 var bodyParser = require('body-parser');
-var jade = require('jade');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 var cons = require('consolidate');
+var jade = require('jade');
 var router = express.Router();
 var app = express();
+const uuidV4 = require('uuid/v4');
+var MemoryStore = require('session-memory-store')(session);
+var sharedsession = require("express-socket.io-session");
 
 // 載入
 var api = require('./routes/api');
 var write = require('./routes/write');
 var www = require('./routes/www');
-// 載入 socket.io
-var socket = require('./routes/socket');
 
+app.use(cookieParser());
 // session
 var uuid = uuidV4();
 var sess = {
@@ -24,29 +27,57 @@ var sess = {
 	},
 	secret: 'keyboard cat',
 	resave: false,
+	store: new MemoryStore(),
 	saveUninitialized: true,
+	clear_interval: 900,
 	cookie: {
-		secure: true
+		secure: false,
+		maxAge: 2 * 60 * 60 * 1000
 	}
 }
-app.set('trust proxy', 1) // trust first proxy
-sess.cookie.secure = true // serve secure cookies
-app.use(session(sess))
+var sessionMiddleware = session(sess)
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+io.use(sharedsession(sessionMiddleware, {
+	autoSave: true
+}));
+app.use(sessionMiddleware);
+
+io.on('connection', function(socket) {;
+	console.log(socket.handshake.session);
+	socket.handshake.session.socketid = socket.id
+	socket.emit('qr', {
+		qr: 'wait',
+		// session: socket.request.session.id,
+		socket: socket.id
+	});
+	socket.on('onConnect', function(data) {});
+	socket.on("login", function(userdata) {
+		socket.handshake.session.userdata = userdata;
+		console.log(userdata);
+	});
+	socket.on("logout", function(userdata) {
+		if (socket.handshake.session.userdata) {
+			delete socket.handshake.session.userdata;
+		}
+	});
+});
+
 
 // 刷新 session
 app.get('/new', function(req, res) {
 	uuid = uuidV4();
 	console.log(uuid);
-	res.send({
-		"return": "done"
-	})
+	console.log("========== NEW ==========");
+	res.redirect('/');
 })
 
 // 模板引擎
 app.engine('html', cons.swig)
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/views')
-
+app.set('io', io);
 // req.body 支持
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -60,6 +91,5 @@ app.use('/api', api);
 app.use('/w', write);
 app.use('/', www);
 
-
-
-app.listen(5000);
+server.listen(5000);
+// app.listen(5000);

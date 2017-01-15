@@ -31,6 +31,27 @@ router.post('/qrlogin/:uuid', function(req, res, next) {
 		r = v.nickName;
 
 		// message to web site
+		var options = {
+			url: '/api-login',
+			qs: {
+				openid: openid,
+				sessionid: uu
+			}
+		};
+
+		// 與微信服務器通信
+		request.get(options, function(error, response, body) {
+			if (error) {
+				console.log(error);
+				return;
+			}
+			if (!error && response.statusCode == 200) {
+
+				res.jsonp({
+					"return": "send done."
+				});
+			}
+		});
 
 	}
 	res.jsonp({
