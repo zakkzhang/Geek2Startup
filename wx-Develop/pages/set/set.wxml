@@ -6,17 +6,23 @@
 
 				<block wx:if="{{item.isTitle == false}}">
 
-				<navigator url="{{item.to}}" hover-class="navigator-hover">
-
+					<block wx:if="{{item.isSwitch}}">
 						<view class="item flex flex-row" >
 							<view class="name">{{item.name}}</view>
-							<switch wx:if="{{item.isSwitch}}" bindchange="switch2Change"/>
-							<block wx:if="{{item.isSwitch == false}}">
-								<text class="ti-angle-right"></text>
-							</block>
+							<switch bindchange="onSwitch"/>
 						</view>
+					</block>
 
-					</navigator>
+					<block wx:if="{{item.isSwitch == false}}">
+						<navigator url="{{item.to}}" hover-class="navigator-hover">
+
+							<view class="item flex flex-row" >
+								<view class="name">{{item.name}}</view>
+								<text class="ti-angle-right"></text>
+							</view>
+
+						</navigator>
+					</block>
 
 				</block>
 

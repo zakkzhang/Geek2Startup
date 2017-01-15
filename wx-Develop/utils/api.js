@@ -52,10 +52,10 @@ class api {
 		var fail = function() {
 			wx.login({
 				success: function(res) {
-					console.log("api.login ... server: " + server + "api/login");
+					console.log("api.login ... server: " + server + "/api/login");
 					if (res.code) {
 						wx.request({
-							url: server + "api/login",
+							url: server+ '/' + "api/login",
 							data: {
 								code: res.code
 							},

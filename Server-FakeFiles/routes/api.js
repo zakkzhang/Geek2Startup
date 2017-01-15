@@ -34,7 +34,7 @@ router.post('/qrlogin/:uuid', function(req, res, next) {
 		var options = {
 			url: '/api-login',
 			qs: {
-				openid: openid,
+				openid: req.body.openid,
 				sessionid: uu
 			}
 		};

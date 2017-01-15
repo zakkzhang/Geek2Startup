@@ -84,8 +84,13 @@ Page({
         }
       })
     })
+  },
+  onSwitch: function() {
+
   }
 })
+
+
 
 
 
