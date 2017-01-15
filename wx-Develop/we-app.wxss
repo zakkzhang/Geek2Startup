@@ -1401,7 +1401,8 @@ page {
 .video hr,
 .video .top,
 .video .mid,
-.video .main {
+.video .main,
+.video .transcript {
   margin-bottom: 15px; }
 .video .video-view {
   width: 345px;
@@ -1418,20 +1419,23 @@ page {
   border-radius: 50%;
   width: 50px;
   height: 50px; }
-.video .action {
-  padding: 4px;
-  width: 64px;
-  margin: 4px;
-  text-align: center;
-  height: 16px;
-  line-height: 16px;
-  border-radius: 16px;
-  background-color: #fff;
-  color: #39C560;
-  font-weight: 800;
-  margin-left: 0; }
 .video .avatar-box {
   margin-right: 8px; }
+.video .transcript .title,
+.video .transcript .p {
+  margin-bottom: 15px; }
+.video .transcript .title {
+  margin-right: 10px; }
+.video .transcript .p {
+  padding-left: 10px;
+  text-align: justify;
+  color: #999; }
+.video .transcript .on .title {
+  color: #666;
+  font-weight: 800; }
+.video .transcript .on .p {
+  border-left: 3px #48C23D double;
+  color: #666; }
 
 .net .head {
   background-position: bottom;

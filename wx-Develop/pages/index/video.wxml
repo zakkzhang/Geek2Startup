@@ -18,8 +18,21 @@
 			</view>
 		</view>
 		<hr/>
-		<view class="main article" >
-			<view>subtile</view>
+		<view class="main transcript" >
+			<view class="title b">Subtitles and Transcript</view>
+			<view class="flex flex-row on" >
+				<view class="title color-light">0:11</view>
+				<view class="p">你們將很難聽懂我的英文。 也好，聽過這些奇妙的人演講，你們可以休息一下。 我必須承認，我覺得也不是很自在， 因為生活中，通常我覺得我的工作毫無用處。 就是說，我覺得很沒有用。 現在，在 Carolyn 和其他人演講之後，我覺得很「遜」。 說實在的，我搞不懂為什麼我來了， 但是，你知道就像一場噩夢，像個冒名頂替者， 被推上歌劇舞台，「你就唱吧！」 我不知如何是好。</view>
+			</view>
+			<hr/>
+
+			<block wx:for="{{[1,2,3,4]}}" wx:key="" >
+				<view class="flex flex-row" >
+					<view class="title color-light">1:0{{index}}</view>
+					<view class="p">所以，所以，因為我沒有什麼好秀，也沒有什麼好說， 我們就來談談其他事。 如果你願意，我們可以來了解一下—— 只是開頭，不很有趣，就是——我如何工作。 當有人來找我，請我做我知名的設計， 像檸檬搾汁器、馬桶刷、牙籤、漂亮馬桶墊， 何不也設計一把牙刷。 我並不試著去設計牙刷。 也不會試著說，「喔，那將是個美好的物品」，或這類的話。 那引不起我的興趣。</view>
+				</view>
+				<hr/>
+			</block>
 		</view>
 	</view>
 </view>
