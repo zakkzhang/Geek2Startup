@@ -58,7 +58,20 @@ Page({
     this.reFresh();
   },
   onClean: function() {
-    wx.clearStorage();
+    wx.showActionSheet({
+      itemList: ['刪除數據'],
+      itemColor: '#FA174C',
+      success: function(res) {
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0) {
+          wx.clearStorage();
+        };
+      },
+      fail: function(res) {
+        console.log(res.errMsg)
+      }
+    })
+
   },
   reFresh: function() {
     var that = this;
@@ -73,6 +86,24 @@ Page({
     });
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

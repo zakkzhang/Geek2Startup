@@ -1,0 +1,29 @@
+.toc.ui.vertical.inverted.menu
+	a.item(href="/") WeApp Menu
+	.item
+		.header Session
+		.menu
+			a.item(href='/login')
+				| Login
+			a.item(href='/dashboard')
+				| home
+	if !isLogin
+		.item
+			.header Article
+			.menu
+				a.item(href='/dashboard/article/post') Post
+				a.item(href='/dashboard/article/manage') Manage
+		.item
+			.header User
+			.menu
+				a.item(href='/dashboard/user/net') Net
+				a.item(href='/dashboard/user/data') User Data
+				a.item(href='/dashboard/user/invite') Invite
+		.item
+			.header System
+			.menu
+				a.item(href='/logout') Logout
+		.item
+			.header 額外
+			.menu
+				a.item(href='/qr') QR 登入

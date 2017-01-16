@@ -1,0 +1,65 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fafafa;
+    padding-left: 200px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+a {
+    color: #39c560;
+}
+
+.toc {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0;
+    border-radius: 0 !important;
+}
+
+.ui.text.menu {
+    margin: 0;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, .9);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, .1);
+}
+
+.padding-top {
+    padding-top: 30px;
+}
+
+.lh {
+    line-height: 1.5em;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.padding {
+    padding: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* type */
+
+.b {
+    font-weight: 800 !important;
+}
+
+/* Color */
+
+.color-green {
+    color: #39c560 !important;
+}
+
+.color-black {
+    color: #000;
+}

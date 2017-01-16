@@ -1,2 +1,3 @@
 <!--pages/set/about.wxml-->
 <text>pages/set/about.wxml</text>
+<contact-button type="default-light" size="20" session-from="weapp"> </contact-button>

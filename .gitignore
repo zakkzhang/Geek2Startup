@@ -8,3 +8,5 @@ config.codekit
 sourceFiles/.sass-cache/
 
 Server-FakeFiles/node_modules/
+
+nApi/node_modules/

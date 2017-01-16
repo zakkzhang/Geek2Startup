@@ -5,24 +5,22 @@ var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
 
 
-gulp.task('default', ['browser-sync'], function () {
-});
+gulp.task('default', ['browser-sync'], function() {});
 
 gulp.task('browser-sync', ['nodemon'], function() {
 	browserSync.init(null, {
 		proxy: "http://localhost:5000",
-        files: ["public/**/*.*", "routes/*.js", "views/*.*"],
-				browser: "google chrome",
-        port: 7000,
+		files: ["public/**/*.*", "routes/*.js", "views/*.*"],
+		browser: "google chrome",
+		port: 7000,
 	});
 });
-gulp.task('nodemon', function (cb) {
+gulp.task('nodemon', function(cb) {
 
 	var started = false;
-
 	return nodemon({
 		script: 'app.js'
-	}).on('start', function () {
+	}).on('start', function() {
 		// to avoid nodemon being started multiple times
 		// thanks @matthisk
 		if (!started) {

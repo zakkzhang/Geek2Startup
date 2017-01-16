@@ -127,3 +127,15 @@ http://blog.csdn.net/cankingapp/article/details/18312117
 ##### 參考
 
 http://gitref.org/zh/remotes/
+
+
+
+## 可能出現的Bug
+
+根據「https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/details.html?t=2017112」的描述。
+
+##### 判斷絕對域名請求
+
+api.js 會在 iOS8 下，無法正常運行「startsWith」函數。
+
+會導致重新綁定 openid 功能失效。
