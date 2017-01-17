@@ -17,12 +17,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/article/post', function(req, res) {
-  res.render('empty', {})
+  res.render('post', {})
   res.end();
 });
 
 router.get('/article/manage', function(req, res) {
-  res.render('empty', {})
+  res.render('manage', {})
   res.end();
 });
 
@@ -37,7 +37,7 @@ router.get('/user/data', function(req, res) {
 });
 
 router.get('/user/invite', function(req, res) {
-  res.render('empty', {})
+  res.render('invite', {})
   res.end();
 });
 

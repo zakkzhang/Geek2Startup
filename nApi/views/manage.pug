@@ -1,0 +1,22 @@
+include include/head
+include include/menu
+.padding.maxw
+	.ui.secondary.menu
+		.item.color-green 文章管理
+		a.item 上一頁
+		a.item 下一頁
+		.right.menu
+			.ui.icon.input
+				input(type='text', placeholder='Search...')
+				i.search.link.icon
+
+	.area
+		- for (var x = 0; x < 12; x++)
+			.ui.grid
+				.one.wide.column
+					button.ui.compact.icon.button
+						i.configure.icon
+				.fifteen.wide.column
+					h3.ui.header safasdf
+					p Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+			.ui.divider

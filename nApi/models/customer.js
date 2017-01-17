@@ -1,3 +1,5 @@
+// https://florianholzapfel.github.io/express-restify-mongoose/#getting-started
+
 /* models.js */
 var express = require('express');
 var router = express.Router();
@@ -9,18 +11,14 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/test");
 
 var Customer = mongoose.model('Customer', new mongoose.Schema({
-	name: {
-		type: String,
-		required: true
-	},
-	comment: {
-		type: String
-	}
+  name: {
+    type: String,
+    required: true
+  },
+  comment: {
+    type: String
+  }
 }));
-
-// resify.serve(router, Customer, {
-// 	preMiddleware: AllCanGetIt
-// })
 
 resify.serve(router, Customer);
 

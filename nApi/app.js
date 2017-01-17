@@ -4,12 +4,13 @@ var methodOverride = require('method-override');
 var cons = require('consolidate');
 var cookieParser = require('cookie-parser');
 const app = express()
-app.use(cookieParser());
 const router = express.Router()
+var we = require('./models/libs.js');
 
 const uuidV4 = require('uuid/v4');
 var uuid = uuidV4();
-console.log(uuid);
+console.log("UUID:", uuid);
+we.uuid = uuid;
 
 app.use(cookieParser(uuid, {
   maxAge: 60 * 60 * 24 * 7
@@ -20,22 +21,26 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json());
 
-// load api
+// load api - .../api/v1
 var models = require("./models/customer.js");
 app.use(models);
 
-// load admin ui
+// 模板
 app.engine('html', cons.swig)
 app.set('view engine', 'pug')
 app.set('views', __dirname + '/views')
 
+// 静态目录
+app.use(express.static('public'));
+
+// admin ui
 var admin = require('./router/admin');
 var dashboard = require('./router/dashboard');
 
-app.use(express.static('public'));
+// 设定路由
 app.use('/', admin);
 app.use('/dashboard', dashboard);
 
 app.listen(3000, () => {
-  console.log('Express server listening on port 3000')
+  console.log("Server Port:", '3000')
 })

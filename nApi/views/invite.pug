@@ -1,0 +1,18 @@
+include include/head
+include include/menu
+#post.padding.maxw
+	.ui.secondary.menu
+		.item.color-green 邀請碼
+		.right.menu
+			a.item 预览
+			a.item 发表
+
+	.area
+		h3.ui.header 邀請碼
+		form.ui.form
+			.field
+				label 授權用戶
+				input(type='text', name='name', placeholder='Name')
+			button.ui.button.basic.secondary 搜索用戶
+			button.ui.button.basic.primary(type='submit') 生成
+	p.padding codes

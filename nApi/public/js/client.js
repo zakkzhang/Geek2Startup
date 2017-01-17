@@ -12,4 +12,12 @@ $(document).ready(function() {
     // this is now fade up in
     .transition('fade up')
 
+
+  // using context
+  $(' .ui.sidebar')
+    .sidebar({
+      context: $(' .bottom.segment')
+    })
+    .sidebar('attach events', ' .menu .item');
+
 });
