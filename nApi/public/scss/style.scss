@@ -2,12 +2,32 @@ body {
     padding: 0;
     margin: 0;
     background-color: #fafafa;
-    padding-left: 200px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #444;
+    /* font-family: "Hiragino Sans GB", "Century Gothic", system, Arial, Verdana, Tahoma, "微软雅黑";*/
 }
 
 a {
     color: #39c560;
+}
+
+.ui.secondary.menu {
+    margin: 0;
+}
+
+.ui.grid>table {
+    padding: 0;
+}
+
+.ui.table {
+    border: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+}
+
+.font-min {
+    font-size: .8em !important;
 }
 
 .toc {
@@ -22,11 +42,17 @@ a {
 
 .area {
     margin: 0;
-    padding: 30px 30px;
+    margin-top: 50px;
+    padding: 80px 50px;
     background-color: rgba(255, 255, 255, .9);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, .1);
+    box-shadow: 0 20px 52px rgba(0, 0, 0, .18);
     border-radius: 8px;
+    margin-bottom: 50px;
+
+    img {
+        opacity: .9;
+    }
 }
 
 .maxw {
@@ -35,6 +61,10 @@ a {
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .minh {
@@ -57,10 +87,6 @@ a {
     padding: 30px;
 }
 
-.text-center {
-    text-align: center;
-}
-
 /* type */
 
 .b {
@@ -74,5 +100,63 @@ a {
 }
 
 .color-black {
-    color: #000;
+    color: #303030;
+}
+
+.color-gray {
+    color: #aaa;
+}
+
+/* flex*/
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.aitems-flex-start {
+    align-items: flex-start;
+}
+
+.aitems-center {
+    align-items: center;
+}
+
+.aitems-flex-end {
+    align-items: flex-end;
+}
+
+.aself-center {
+    align-self: center;
+}
+
+.aself-center {
+    align-self: flex-end;
+}
+
+.acontent-center {
+    align-content: center;
+}
+
+.acontent-flex-end {
+    align-content: flex-end;
+}
+
+.jcontent-center {
+    justify-content: center;
+}
+
+.jcontent-flex-end {
+    justify-content: flex-end;
+}
+
+.jcontent-flex-start {
+    justify-content: flex-start;
 }

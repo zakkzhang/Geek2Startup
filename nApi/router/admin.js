@@ -3,7 +3,7 @@ var router = express.Router();
 var we = require('./../models/libs.js');
 
 var isLoginfn = function(req, res) {
-  console.log(req.signedCookies);
+  console.log("req.cookies", req.cookies);
 }
 
 router.get('/', function(req, res) {
@@ -50,23 +50,43 @@ router.get('/logout', function(req, res) {
 
 // qr pages
 router.get('/qr', function(req, res) {
+  console.log("req.cookies:", req.cookies);
+
+  var io = res.io;
+  var sid;
+
+  io.on("connection", function(socket) {
+    sid = socket.id;
+    io.emit('new user', socket.id);
+    var tweets = setInterval(function() {
+      socket.volatile.emit('bieber tweet', tweets._idleStart);
+    }, 1500);
+
+    socket.on('disconnect', function() {
+      clearInterval(tweets);
+    });
+  })
+
   res.render('qr', {
-    qrurl: we.qrurl(req.cookies.io)
+    url: we.qrurl() + '/',
+    qr: '/image/qr/'
   })
   res.end();
 });
 
 router.get('/qr/login/:uuid/:io', function(req, res) {
+  res.io.sockets.in(req.params.io).emit('url', "/user/");
   console.log("UUID:", req.params.uuid);
   console.log("IO:", req.params.io);
   res.send({
-    "send": "ok"
+    "UUID": req.params.uuid,
+    "IO": req.params.io
   })
   res.end();
 });
 
-router.get('/image/qr', function(req, res) {
-  var img = we.qrimg(req.cookies.io);
+router.get('/image/qr/:io', function(req, res) {
+  var img = we.qrimg(req.params.io);
   res.writeHead(200, {
     'Content-Type': 'image/png'
   });

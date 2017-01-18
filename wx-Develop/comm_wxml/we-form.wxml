@@ -1,0 +1,36 @@
+<template name="form-box">
+  <!-- input -->
+  <block wx:if="{{weData.type == 'input'}}" >
+
+    <label>
+      <view class="title b"><text class="{{weData.icon}}"></text>  {{weData.title}}</view>
+      <view class="p color-light" >{{weData.p}}</view>
+    </label>
+    <input name="{{weData.name}}" value="{{weData.value}}" placeholder="{{weData.place}}" />
+
+  </block>
+
+  <!-- textarea -->
+  <block wx:if="{{weData.type == 'textarea'}}" >
+
+    <label>
+      <view class="title b"><text class="{{weData.icon}}"></text>  {{weData.title}}</view>
+      <view class="p color-light" >{{weData.p}}</view>
+    </label>
+    <textarea maxlength="120" name="{{weData.name}}" value="{{weData.value}}"  placeholder="{{weData.place}}" />
+
+  </block>
+
+    <!-- textarea -->
+  <block wx:if="{{weData.type == 'textarea-auto-height'}}" >
+
+    <label>
+      <view class="title b"><text class="{{weData.icon}}"></text>  {{weData.title}}</view>
+      <view class="p color-light" >{{weData.p}}</view>
+    </label>
+    <textarea name="{{weData.name}}" style="min-height: 300px;" value="{{weData.value}}"  auto-height placeholder="{{weData.place}}" />
+
+  </block>
+
+</template>
+

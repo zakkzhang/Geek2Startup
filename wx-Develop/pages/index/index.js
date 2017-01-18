@@ -7,14 +7,13 @@ var nApi = new api();
 Page({
   data: {
     userInfo: {},
-    server: app.globalData.server,
-    openid: app.globalData.openid
+    api: {}
   },
   onShareAppMessage: function() {
     return {
       title: app.globalData.appData.name,
       desc: '分享一名极客给你看看',
-      path: 'pages/index/index?userid='
+      path: 'pages/index/profile?userid='
     }
   },
   onLaunch: function() {
@@ -33,17 +32,44 @@ Page({
   },
   onLoad: function() {
     wx.showNavigationBarLoading()
-    //console.log('onLoad')
+      //console.log('onLoad')
     var that = this;
 
-    nApi.api('api/index',function(r) {
-      wx.hideNavigationBarLoading()
-      that.setData({
-        user: r
-      })
-    });
+    app.getUserID(function(uid) {
+      if (uid != 0) {
+        nApi.api('api/v1/Users/' + uid, function(res) {
+          wx.hideNavigationBarLoading()
+          that.setData({
+            api: res,
+            body: [{
+              "address": "https://app.geek2startup.com/json/demo.mp4",
+              "display": "video",
+              "icon": "ti-video-camera",
+              "type": "视频介绍",
+              "name": "视频",
+              "time": "0:40"
+            }, {
+              "display": "text",
+              "icon": "ti-id-badge",
+              "id": res._id,
+              "name": res.resume.jobtitle,
+              "type": "个人介绍",
+              "text": res.resume.introduce
+            }],
+            more: [{
+              "display": "link",
+              "icon": "ti-layout-media-right",
+              "id": res._id,
+              "name": res.resume.articleTitle,
+              "text": res.resume.article,
+              "type": "自选文章"
+            }]
+          })
+        });
+      };
+    })
 
-    //调用应用实例的方法获取全局数据
+    //getUserData
     app.getUserInfo(function(userInfo) {
       //更新数据
       that.setData({
@@ -52,36 +78,6 @@ Page({
     })
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

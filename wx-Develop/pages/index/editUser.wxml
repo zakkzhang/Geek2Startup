@@ -1,0 +1,20 @@
+<import src="../../comm_wxml/we-form.wxml"/>
+
+<view class="user-edit">
+	<view class="head">
+		<text class="title b">{{userInfo.nickName}}</text>
+		<view class="desciption color-light">{{api.jobtitle}}</view>
+		<view class="p color-light">{{api.aword}}</view>
+	</view>
+	<view class="padding" >
+		<form class="form" bindsubmit="formSubmit">
+
+			<block wx:for="{{form}}" wx:key="" >
+				<template is="form-box" data="{{weData:item}}" />
+				<hr/>
+			</block>
+
+			<button formType="submit">Submit</button>
+		</form>
+	</view>
+</view>

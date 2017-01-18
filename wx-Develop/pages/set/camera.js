@@ -26,23 +26,6 @@ Page({
     wx.showNavigationBarLoading()
     var that = this;
 
-    app.getUserInfo(function(userInfo) {
-      nApi.api('/w/userInfo', userInfo, function(res) {
-        nApi.getOpenid(function(openid) {
-          var d = {
-            openid: openid
-          }
-
-          nApi.api(url, d, function(res) {
-            wx.hideNavigationBarLoading()
-            console.log(res);
-          })
-
-        })
-      });
-    })
-
-
   },
   onCamera: function() {
     var that = this;
@@ -86,6 +69,8 @@ Page({
     });
   }
 })
+
+
 
 
 

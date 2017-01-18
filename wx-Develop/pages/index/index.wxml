@@ -1,60 +1,80 @@
 <import src="../../comm_wxml/we-index.wxml"/>
 
 <view class="index overflow-hidden">
-    <view class="head"></view>
-    <view class="avatar flex flex-row aitems-flex-start" >
-        <view class="ai" >
-            <image src="{{userInfo.avatarUrl}}" mode="{{we_data.user_avatar_mode}}" class="avatar_image" />
-        </view>
-        <view class="text">
-            <view class="area flex flex-column aitems-flex-start jcontent-flex-end" >
-                <view class="self black b" >{{userInfo.nickName}}</view>
-                <view class="self black color-light" >{{user.head.title}}</view>
-                <view class="self black color-light" >{{user.head.desc}}</view>
-            </view>
-        </view>
-    </view>
-    <block wx:for="{{user.body}}" wx:key="" >
-        <hr/>
-        <template is="index-box" data="{{weData:item}}" />
-    </block>
+	<view class="head"></view>
+	<view class="avatar flex flex-row aitems-flex-start" >
+		<view class="ai" >
+			<image src="{{userInfo.avatarUrl}}" mode="{{we_data.user_avatar_mode}}" class="avatar_image" />
+		</view>
+		<view class="text">
+			<view class="area flex flex-column aitems-flex-start jcontent-flex-end" >
+				<view class="self black b" >{{userInfo.nickName}}</view>
+				<view class="self black color-light" >{{api.resume.jobtitle}}</view>
+				<view class="self black color-light" >{{api.resume.aword}}</view>
+			</view>
+		</view>
+	</view>
+	<block wx:for="{{body}}" wx:key="" >
+		<hr/>
+		<template is="index-box" data="{{weData:item}}" />
+	</block>
 
-    <hr/>
-    <view class="action padding-l flex" >
-        <view class="button">
-            <view class="icon">
-                <text class="ti-pencil"></text>
-            </view>
-            <view class="name" >編輯資料</view>
-        </view>
-        <view class="button">
-            <view class="icon">
-                <text class="ti-desktop"></text>
-            </view>
-            <view class="name" >Web 編輯</view>
-        </view>
-        <view class="button">
-            <view class="icon">
-                <text class="ti-medall"></text>
-            </view>
-            <view class="name" >申請認證</view>
-        </view>
-    </view>
+	<hr/>
+	<view class="action padding-l flex" >
 
-    <block wx:for="{{user.more}}" wx:key="" >
-        <hr/>
-        <template is="index-box" data="{{weData:item}}" />
-    </block>
+		<navigator url="/pages/index/editUser" hover-class="navigator-hover">
+			<view class="button">
+				<view class="icon">
+					<text class="ti-pencil"></text>
+				</view>
+				<view class="name" >编辑资料</view>
+			</view>
+		</navigator>
 
-    <hr/>
-    <view class="padding-l row flex" >
-        <view class="text no-icon">
-            <text class="title">{{user.like.name}}</text>
-            <view class="p">{{user.like.text}}</view>
-        </view>
-        <view class="text no-icon">
-            <text class="title">{{user.views.name}}</text>
-            <view class="p">{{user.views.text}}</view>
-        </view>
-    </view>
+		<navigator url="/pages/net/group" hover-class="navigator-hover">
+			<view class="button">
+				<view class="icon">
+					<text class="ti-control-record"></text>
+				</view>
+				<view class="name" >小组</view>
+			</view>
+		</navigator>
+
+		<navigator url="/pages/set/camera" hover-class="navigator-hover">
+			<view class="button">
+				<view class="icon">
+					<text class="ti-desktop"></text>
+				</view>
+				<view class="name" >电脑编辑</view>
+			</view>
+		</navigator>
+
+		<navigator url="/pages/set/apply" hover-class="navigator-hover">
+			<view class="button">
+				<view class="icon">
+					<text class="ti-medall"></text>
+				</view>
+				<view class="name" >申请认证</view>
+			</view>
+		</navigator>
+
+
+	</view>
+
+	<block wx:for="{{more}}" wx:key="" >
+		<hr/>
+		<template is="index-box" data="{{weData:item}}" />
+	</block>
+
+	<hr/>
+	<view class="padding-l row flex" >
+		<view class="text no-icon">
+			<text class="title">{{user.like.name}}</text>
+			<view class="p">{{user.like.text}}</view>
+		</view>
+		<view class="text no-icon">
+			<text class="title">{{user.views.name}}</text>
+			<view class="p">{{user.views.text}}</view>
+		</view>
+	</view>
 </view>

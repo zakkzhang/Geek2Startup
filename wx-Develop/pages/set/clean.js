@@ -16,7 +16,7 @@ Page({
     wx.getStorage({
       key: 'openid',
       success: function(res) {
-        console.log(res.data)
+        console.log(res)
       }
     })
 
@@ -31,6 +31,8 @@ Page({
     // 页面关闭
   }
 })
+
+
 
 
 

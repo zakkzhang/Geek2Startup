@@ -44,7 +44,7 @@ io.use(sharedsession(sessionMiddleware, {
 }));
 app.use(sessionMiddleware);
 
-io.on('connection', function(socket) {;
+io.on('connection', function(socket) {
 	console.log(socket.handshake.session);
 	socket.handshake.session.socketid = socket.id
 	socket.emit('qr', {

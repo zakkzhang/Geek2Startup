@@ -3,6 +3,7 @@
     "pages\/index\/index",
     "pages\/index\/video",
     "pages\/index\/profile",
+    "pages\/index\/editUser",
     "pages\/net\/net",
     "pages\/net\/group",
     "pages\/discover\/discover",

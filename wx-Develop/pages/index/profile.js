@@ -6,80 +6,31 @@ var nApi = new api();
 
 Page({
   data: {
-    userInfo: {},
-    server: app.globalData.server,
-    openid: app.globalData.openid
+    userInfo: {}
   },
   onShareAppMessage: function() {
     return {
       title: app.globalData.appData.name,
       desc: '分享一名极客给你看看',
-      path: 'pages/index/index?userid='
+      path: 'pages/index/index?userid=' + app.globalData.userID
     }
   },
-  onLaunch: function() {
-
+  onLoad:function(options){
+    // 页面初始化 options为页面跳转所带来的参数
   },
-  onShow: function() {
+  onReady:function(){
+    // 页面渲染完成
   },
-  onHide: function() {
+  onShow:function(){
+    // 页面显示
   },
-  onReady: function() {
-    wx.showNavigationBarLoading()
-    var that = this;
-
-    nApi.api('api/index',function(r) {
-      wx.hideNavigationBarLoading()
-      that.setData({
-        user: r
-      })
-    });
-
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
+  onHide:function(){
+    // 页面隐藏
+  },
+  onUnload:function(){
+    // 页面关闭
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

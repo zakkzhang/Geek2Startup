@@ -1,4 +1,4 @@
-.toc.ui.vertical.inverted.menu.fixed
+.ui.sidebar.inverted.vertical.menu
 	a.item(href="/") WeApp Menu
 	.item
 		.header 狀態
@@ -8,6 +8,7 @@
 	.item
 		.header 用戶
 		.menu
+			a.item(href='/center') 用戶
 			a.item(href='/logout') 資料編輯
 			a.item(href='/logout') 視頻
 			a.item(href='/logout') 自選文章
@@ -40,3 +41,8 @@
 			.header System
 			.menu
 				a.item(href='/logout') Logout
+
+.ui.menu.secondary
+	a.item#openMenu
+		i.sidebar.icon
+		| Menu
