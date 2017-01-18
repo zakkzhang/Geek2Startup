@@ -46,6 +46,12 @@ Page({
       "icon": "",
       "isSwitch": false,
       "isTitle": false
+    }, {
+      "name": "欢迎页面",
+      "to": "/pages/index/newUser",
+      "icon": "",
+      "isSwitch": false,
+      "isTitle": false
     },{
       "name": "关于 " + app.globalData.appData.name,
       "to": "/pages/set/about",

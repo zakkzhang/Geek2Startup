@@ -1,0 +1,16 @@
+
+<view class="debug">
+	<view class="head">
+		<text class="title">Debug</text>
+		<view class="desciption">如有需要，可截图到公众号客服以帮助我们解决问题</view>
+	</view>
+	<view class="padding">
+
+		<block wx:for="{{debug}}" wx:key="">
+			<view class="title b">{{item.name}}</view>
+			<view class="p color-light text-more">{{item.val}}</view>
+			<hr/>
+		</block>
+
+	</view>
+</view>

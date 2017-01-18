@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/index/video",
     "pages/index/profile",
+    "pages/index/newUser",
     "pages/index/editUser",
     "pages/net/net",
     "pages/net/group",
@@ -12,38 +13,34 @@
     "pages/set/about",
     "pages/set/clean",
     "pages/set/camera",
-    "pages/set/apply"
+    "pages/set/apply",
+    "pages/set/debug"
   ],
   "tabBar": {
     "backgroundColor": "#fff",
     "borderStyle": "white",
     "color": "#404040",
-    "list": [
-      {
-        "iconPath": "image/icon-assets/home.png",
-        "pagePath": "pages/index/index",
-        "selectedIconPath": "image/icon-assets/home_HL.png",
-        "text": "极客"
-      },
-      {
-        "iconPath": "image/icon-assets/net.png",
-        "pagePath": "pages/net/net",
-        "selectedIconPath": "image/icon-assets/net_HL.png",
-        "text": "网络"
-      },
-      {
-        "iconPath": "image/icon-assets/discover.png",
-        "pagePath": "pages/discover/discover",
-        "selectedIconPath": "image/icon-assets/discover_HL.png",
-        "text": "发现"
-      },
-      {
-        "iconPath": "image/icon-assets/set.png",
-        "pagePath": "pages/set/set",
-        "selectedIconPath": "image/icon-assets/set_HL.png",
-        "text": "设定"
-      }
-    ],
+    "list": [{
+      "iconPath": "image/icon-assets/home.png",
+      "pagePath": "pages/index/index",
+      "selectedIconPath": "image/icon-assets/home_HL.png",
+      "text": "极客"
+    }, {
+      "iconPath": "image/icon-assets/net.png",
+      "pagePath": "pages/net/net",
+      "selectedIconPath": "image/icon-assets/net_HL.png",
+      "text": "网络"
+    }, {
+      "iconPath": "image/icon-assets/discover.png",
+      "pagePath": "pages/discover/discover",
+      "selectedIconPath": "image/icon-assets/discover_HL.png",
+      "text": "发现"
+    }, {
+      "iconPath": "image/icon-assets/set.png",
+      "pagePath": "pages/set/set",
+      "selectedIconPath": "image/icon-assets/set_HL.png",
+      "text": "设定"
+    }],
     "selectedColor": "#48C23D"
   },
   "window": {

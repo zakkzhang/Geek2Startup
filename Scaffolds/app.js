@@ -22,13 +22,15 @@ App({
 
   },
   getUserID: function(cb, fail) {
-    if (nApi.userid != 0) {
-      this.userID = nApi.userid
-      typeof cb == "function" && cb(nApi.userid);
-      return nApi.userid
+
+    var id = nApi.userid;
+    if (id == 0) {
+      nApi.getUserID(cb, fail);
     } else {
-      typeof fail == "function" && fail(0);
+      this.userID = nApi.userid;
+      typeof cb == "function" && cb(nApi.userid);
     }
+
   },
   postUserinfo: function(userData) {
     var that = this;

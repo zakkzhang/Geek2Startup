@@ -3,6 +3,7 @@
     "pages\/index\/index",
     "pages\/index\/video",
     "pages\/index\/profile",
+    "pages\/index\/newUser",
     "pages\/index\/editUser",
     "pages\/net\/net",
     "pages\/net\/group",
@@ -12,7 +13,8 @@
     "pages\/set\/about",
     "pages\/set\/clean",
     "pages\/set\/camera",
-    "pages\/set\/apply"
+    "pages\/set\/apply",
+    "pages\/set\/debug"
   ],
   "tabBar" : {
     "selectedColor" : "#48C23D",

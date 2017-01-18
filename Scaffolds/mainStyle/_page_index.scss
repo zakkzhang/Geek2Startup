@@ -1,5 +1,38 @@
 // index
 
+.newUser {
+
+  .card .view{
+    z-index: 5002;
+  }
+
+  .card {
+    position: fixed;
+    left: 8vw;
+    top: 10vh;
+    height: 70vh;
+    width: 76vw;
+    padding: 5vw;
+    display: block;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 32px 96px rgba(0, 0, 0, 0.2);
+    color: #404040;
+    z-index: 5000;
+    text-align: center;
+
+    .name {
+      font-size: 16px;
+      text-align: center;
+      padding: 30px;
+      font-weight: 800;
+      color: #666;
+    }
+
+  }
+
+}
+
 .index {
   hr {
     margin-left: 15px;

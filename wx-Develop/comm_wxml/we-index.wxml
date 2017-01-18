@@ -1,4 +1,25 @@
 <template name="index-box">
+
+  <!-- Video -->
+  <block wx:if="{{weData.display == 'newUser'}}" >
+
+    <navigator url="/pages/index/profile?id={{weData.id}}" hover-class="navigator-hover">
+
+      <view class="padding-l row" >
+        <view class="icon">
+
+        </view>
+
+        <view class="text"  >
+          <text class="one">{{weData.name}}</text>
+          <text class="notice">{{weData.text}}</text>
+        </view>
+      </view>
+
+    </navigator>
+
+  </block>
+
   <!-- Video -->
   <block wx:if="{{weData.display == 'video'}}" >
 

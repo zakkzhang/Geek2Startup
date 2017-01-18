@@ -2,20 +2,35 @@
 
 var app = getApp();
 var util = require('util.js');
+var dev = false;
 
 var server;
 
-server = "https://app.geek2startup.com/fake-api";
-server = "http://app.geek2startup.com:5000";
-server = "http://192.168.1.155:7000";
+server = "https://app.geek2startup.com";
+// server = "http://192.168.1.155:7000";
 
 var oid;
+var dbid;
 
 class api {
 
   constructor() {
     this.openid = 0;
     this.userid = 0;
+  }
+
+  getID(){
+
+    if (this.userid == 0) {
+      if (dbid == 0) {
+        return 0;
+      } else {
+        return dbid;
+      }
+    } else {
+      return this.userid;
+    }
+
   }
 
   apiMsg(msg) {
@@ -107,6 +122,7 @@ class api {
 
   setUserID(uid) {
     this.userid = uid;
+    dbid = uid;
     wx.setStorage({
       key: "userid",
       data: uid
@@ -123,6 +139,7 @@ class api {
         } else {
           console.log("wx.getStorage: success '" + res.data + "'");
           this.userid = res.data;
+          dbid = res.data;
           (callback && typeof(callback) === "function") && callback(res.data);
         }
       },
@@ -208,9 +225,25 @@ class api {
       header: header,
       success: function(res) {
 
-        console.log("return: " + path + " method: " + method);
-        // console.log(res.data);
-        (callback && typeof(callback) === "function") && callback(res.data);
+        console.log("return: " + path + " method: " + method + " statusCode: " + res.statusCode);
+
+        if ((res.statusCode == 502 || res.statusCode == 404) && dev == false) {
+          wx.showModal({
+            title: '错误',
+            showCancel: true,
+            confirmText: '运行除错',
+            content: "错误代码: " + res.statusCode,
+            success: function(res) {
+              if (res.confirm) {
+                wx.redirectTo({
+                  url: '/pages/set/debug'
+                })
+              }
+            }
+          })
+        } else {
+          (callback && typeof(callback) === "function") && callback(res.data);
+        }
 
       },
       fail: function() {

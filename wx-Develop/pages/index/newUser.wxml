@@ -1,0 +1,6 @@
+<view class="newUser" >
+	<view class="card" >
+		<view class="title b">Welcome New User</view>
+		<view class="name">{{userInfo.nickName}}</view>
+	</view>
+</view>
