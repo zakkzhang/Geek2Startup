@@ -1,9 +1,33 @@
 // index
 
 .newUser {
+  .image image {
+    height: 240rpx;
+    width: 384rpx;
+    margin: 0 auto;
+    margin-top: 120rpx;
+    margin-bottom: 110rpx;
+  }
 
-  .card .view{
-    z-index: 5002;
+  .p {
+    text-align: left;
+    margin: 0 auto;
+    width: 552rpx;
+    margin-top: 32rpx;
+    font-size: 24rpx;
+  }
+
+  .button {
+    margin: 0 auto;
+    margin-top: 32rpx;
+    width: 460rpx;
+    height: 84rpx;
+    background: #39C560;
+    box-shadow: 0 16rpx 24rpx 0 rgba(56, 197, 95, 0.48);
+    border-radius: 200rpx;
+    color: #fff;
+    font-weight: 800;
+    line-height: 84rpx;
   }
 
   .card {
@@ -20,15 +44,6 @@
     color: #404040;
     z-index: 5000;
     text-align: center;
-
-    .name {
-      font-size: 16px;
-      text-align: center;
-      padding: 30px;
-      font-weight: 800;
-      color: #666;
-    }
-
   }
 
 }
