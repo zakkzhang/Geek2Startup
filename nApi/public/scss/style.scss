@@ -1,16 +1,39 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #fafafa;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #444;
-    /* font-family: "Hiragino Sans GB", "Century Gothic", system, Arial, Verdana, Tahoma, "微软雅黑";*/
+    color: #1b1c1d;
+    /* background: linear-gradient(to bottom, #eee, #fafafa);*/
+    background-color: #fafafa;
 }
 
 a {
     color: #39c560;
+}
+
+.footer {
+    padding: 50px;
+    color: #fff !important;
+    background-color: #1b1c1d;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.LoginMenu {
+    .userImage {
+        border-radius: 50%;
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 5px !important;
+    }
+}
+
+.container {
+    margin-top: 35px;
 }
 
 .ui.secondary.menu {

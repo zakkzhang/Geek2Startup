@@ -1,5 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var m = require('./../models/api.js');
+
+router.use(function(req, res, next) {
+  console.log("");
+  console.log("> router: /dashboard/ ...");
+  console.log('%s %s %s', req.method, req.url, req.path);
+  next();
+});
 
 router.get('/', function(req, res) {
   console.log(req.cookies);
@@ -7,7 +15,7 @@ router.get('/', function(req, res) {
     res.redirect("/");
     return false;
   }
-  res.render('home', {
+  res.render('dashboard/home', {
     pageTitle: 'WeApp',
     isError: false,
     isLogin: true,
@@ -17,12 +25,12 @@ router.get('/', function(req, res) {
 });
 
 router.get('/article/post', function(req, res) {
-  res.render('post', {})
+  res.render('dashboard/post', {})
   res.end();
 });
 
 router.get('/article/manage', function(req, res) {
-  res.render('manage', {})
+  res.render('dashboard/manage', {})
   res.end();
 });
 
@@ -36,8 +44,10 @@ router.get('/user/data', function(req, res) {
   res.end();
 });
 
+
+
 router.get('/user/invite', function(req, res) {
-  res.render('invite', {})
+  res.render('dashboard/invite', {})
   res.end();
 });
 

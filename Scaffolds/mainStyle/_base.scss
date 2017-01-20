@@ -240,7 +240,7 @@ hr {
 
 // Display
 
-.hide {
+.hide,.hidden {
   display: none !important;
 }
 
@@ -266,7 +266,7 @@ hr {
   overflow: hidden;
   text-overflow: '... ..';
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 

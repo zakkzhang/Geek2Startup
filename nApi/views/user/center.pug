@@ -1,0 +1,47 @@
+include ./../include/head
+include ./../include/menu-UserLogin
+include ./Menu
+
+.ui.container
+	h1.ui.header 编辑我的资料
+	.area
+		form.ui.form(method="post")
+			h4.ui.dividing.header 微信资料
+			.fields
+				.three.wide.field
+					label 名称
+					input(type='text', placeholder='', disabled="",value=userinfo.nickName)
+			h4.ui.dividing.header 基本资料
+			.fields
+				.three.wide.field
+					label 职业头衔
+					input(type='text', placeholder='网页设计师、投资人……',value=resume.jobtitle, name="jobtitle")
+			.fields
+				.ten.wide.field
+					label 一句话介绍
+					input(type='text', placeholder='我是一名……',value=resume.aword, name="aword")
+			.fields
+				.ten.wide.field
+					label 自我介绍
+					textarea(name="introduce")
+						| #{resume.introduce}
+
+			h4.ui.dividing.header 自选文章
+			.inline.field
+				#isShowArticle.ui.checkbox.toggle
+					input.hidden(type='checkbox', tabindex='0', name="isShowArticle")
+					label 在展示中，显示自选文章
+
+			.fields
+				.ten.wide.field
+					label 标题
+					input(type='text', placeholder='自选文章标题',value=resume.articleTitle, name="articleTitle")
+			.fields
+				.ten.wide.field
+					label 正文（可以使用 Markdown 格式）
+					textarea(rows="10", name="article")
+						| #{resume.article}
+			h4.ui.dividing.header 操作
+			button.ui.button(type='submit') 提交
+
+include ./../include/footer

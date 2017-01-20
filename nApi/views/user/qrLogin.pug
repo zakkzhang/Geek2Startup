@@ -1,0 +1,20 @@
+include ./../include/head
+include ./../include/menu-Before
+.ui.container
+	.ui.menu.secondary
+		a.item#openMenu
+			i.sidebar.icon
+			| Menu
+
+#Loader.ui.active.dimmer
+	.ui.loader
+#QR.ui.container
+	h1.ui.header.text-center.color-green Geek2Startup
+		.sub.header 請透過二維碼登入
+	.area.text-center
+		img#QRImage(src="images/icons.svg",qr=qr)
+		p#socketid.font-min.color-gray Socket ID：
+		p.font-min.color-gray 心跳：
+			span#tweet.color-black.animated.hinge.infinite.flash 0
+	h5.ui.header 如何打開掃描二維碼？
+	p 在「小程序」中，選擇設置 》掃描二維碼，即可打開掃描入口。

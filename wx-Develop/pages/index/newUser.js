@@ -7,9 +7,7 @@ Page({
   data: {},
   onLoad: function(options) {
     var that = this;
-    //getUserData
     app.getUserInfo(function(userInfo) {
-      //更新数据
       that.setData({
         userInfo: userInfo
       })
@@ -28,9 +26,22 @@ Page({
     // 页面关闭
   },
   clickGo: function() {
-
+    nApi.getUserID(function(uid) {
+      nApi.api('api/v1/Users/' + uid, "PATCH", {
+        name: 'isNewUser',
+        data: false
+      }, function(res) {
+        wx.redirectTo({
+          url: '/pages/index/newUser2'
+        })
+      });
+    })
   }
 })
+
+
+
+
 
 
 

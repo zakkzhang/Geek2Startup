@@ -2,19 +2,52 @@
 
 
 .form {
+	input,
+	textarea {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.item {
+		line-height: 32px;
+		font-size: 12px;
+		font-weight: 800;
+		margin-bottom: 20px;
+	}
+
 	input {
 		background-color: #fff;
 		height: 40px;
 		padding-left: 15px;
 		padding-right: 15px;
-		border-radius: 2px;
+		border-radius: 3px;
 		border: 1px solid RGBA(45, 45, 45, 0.15);
 		margin-top: 10px;
 		margin-bottom: 20px;
 	}
 
-	input[disabled=""] {
+	input[disabled] {
 		opacity: 0.2;
+	}
+
+	.switch {
+		.title {
+			margin-bottom: 0;
+		}
+
+		.p {
+			margin-top: 4px;
+		}
+
+	}
+
+	.button.second {
+
+		/* Rectangle 2: */
+		background: #F24885;
+		box-shadow: 0 8px 12px 0 rgba(242, 72, 133, 0.24);
+		border-radius: 100px;
+		color: #FFF;
 	}
 
 	textarea {
@@ -42,12 +75,18 @@
 	}
 
 	button {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		background-color: RGBA(45, 45, 45, 1.00);
+		margin: 0 auto;
+		margin-top: 32rpx;
+		margin-bottom: 32rpx;
+		width: 460rpx;
+		height: 84rpx;
+		background: #39C560;
+		box-shadow: 0 16rpx 24rpx 0 rgba(56, 197, 95, 0.48);
+		border-radius: 200rpx;
 		color: #fff;
-		border-radius: 2px;
-		box-shadow: 0px 12px 8px RGBA(45, 45, 45, 0.20);
+		font-weight: 800;
+		line-height: 84rpx;
+		font-size: 12px;
 	}
 
 }

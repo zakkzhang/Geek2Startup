@@ -9,12 +9,31 @@
 	<view class="padding" >
 		<form class="form" bindsubmit="formSubmit">
 
-			<block wx:for="{{form}}" wx:key="" >
-				<template is="form-box" data="{{weData:item}}" />
-				<hr/>
-			</block>
+			<navigator url="/pages/index/editUserUploadVideo" hover-class="navigator-hover">
 
-			<button formType="submit">Submit</button>
+				<view class="item flex flex-row jcontent-center" >
+				<view class="name flex-1">视频介绍</view>
+				<view><text class="ti-angle-right"></text></view>
+				</view>
+
+			</navigator>
+			<hr/>
+
+			<view>
+				<block wx:for="{{form}}" wx:key="" >
+					<template is="form-box" data="{{weData:item}}" />
+					<hr/>
+				</block>
+			</view>
+
+			<view class="formArticle {{uiClass.showArticle}}" >
+				<block wx:for="{{form_article}}" wx:key="" >
+					<template is="form-box" data="{{weData:item}}" />
+					<hr/>
+				</block>
+			</view>
+
+			<button formType="submit">提交</button>
 		</form>
 	</view>
 </view>

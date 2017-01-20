@@ -9,105 +9,94 @@ Page({
       jobtitle: "职业头衔",
       aword: "一句话介绍"
     },
-    form: [{
-      title: "职业头衔",
-      p: "网页设计师、信息架构师、企业家和投资人……",
-      place: "职业头衔",
-      name: "jobtitle",
-      icon: "",
-      type: "input"
-    }, {
-      title: "一句话介绍",
-      p: "我是一名……",
-      name: "aword",
-      place: "最多 28 個字",
-      icon: "",
-      type: "input"
-    }, {
-      title: "自我介绍",
-      p: "我有 5 年的相关工作经验。先后任职于 XXX 公司、XXX 公司。在职期间 ……",
-      place: "最多 120 個字",
-      name: "introduce",
-      icon: "ti-id-badge",
-      type: "textarea"
-    }, {
-      title: "自选文章",
-      p: "自选文章的标题",
-      place: "自选文章 - 标题",
-      name: "articleTitle",
-      icon: "",
-      type: "input"
-    }, {
-      title: "自选文章",
-      p: "可使用 Markdown 格式，不支持插入圖片",
-      place: "Markdown Formats",
-      name: "article",
-      icon: "ti-layout-media-right",
-      type: "textarea-auto-height"
-    }]
+    uiClass: {
+      showArticle: 'hidden'
+    }
   },
   onLoad: function(options) {
     var that = this;
 
-
-
     app.getUserID(function(uid) {
-      console.log("onLoad: " + uid);
+
+      console.log("editUser", uid);
+
       if (uid != 0) {
         nApi.api('api/v1/Users/' + uid + '/', 'GET', function(res) {
 
-          if (res.resume != undefined) {
+          if (res.resume.isShowArticle) {
             that.setData({
-              api: {
-                jobtitle: res.resume.jobtitle,
-                aword: res.resume.aword
-              },
-              form: [{
-                title: "职业头衔",
-                p: "网页设计师、信息架构师、企业家和投资人……",
-                place: res.resume.jobtitle,
-                value: res.resume.jobtitle,
-                name: "jobtitle",
-                icon: "",
-                type: "input"
-              }, {
-                title: "一句话介绍",
-                p: "我是一名……",
-                place: res.resume.aword,
-                value: res.resume.aword,
-                name: "aword",
-                icon: "",
-                type: "input"
-              }, {
-                title: "自我介绍",
-                p: "我有 5 年的相关工作经验。先后任职于 XXX 公司、XXX 公司。在职期间 ……",
-                place: res.resume.introduce,
-                value: res.resume.introduce,
-                name: "introduce",
-                icon: "ti-id-badge",
-                type: "textarea"
-              }, {
-                title: "文章标题",
-                p: "自选文章的标题",
-                place: res.resume.articleTitle,
-                value: res.resume.articleTitle,
-                name: "articleTitle",
-                icon: "",
-                type: "input"
-              }, {
-                title: "自选文章",
-                p: "可使用 Markdown 格式，不支持插入圖片",
-                place: res.resume.article,
-                value: res.resume.jobtitle,
-                name: "article",
-                icon: "ti-layout-media-right",
-                type: "textarea-auto-height"
-              }]
+              uiClass: {
+                showArticle: ''
+              }
             })
-          };
+          } else {
+            that.setData({
+              uiClass: {
+                showArticle: 'hidden'
+              }
+            })
+          }
 
+          that.setData({
+            api: {
+              jobtitle: res.resume.jobtitle,
+              aword: res.resume.aword
+            },
+            form: [{
+              title: "职业头衔",
+              p: "网页设计师、信息架构师、企业家和投资人……",
+              place: res.resume.jobtitle,
+              value: res.resume.jobtitle,
+              name: "jobtitle",
+              icon: "",
+              type: "input"
+            }, {
+              title: "一句话介绍",
+              p: "我是一名……",
+              place: res.resume.aword,
+              value: res.resume.aword,
+              name: "aword",
+              icon: "",
+              type: "input"
+            }, {
+              title: "自我介绍",
+              p: "我有 5 年的相关工作经验。先后任职于 XXX 公司、XXX 公司。在职期间 ……",
+              place: res.resume.introduce,
+              value: res.resume.introduce,
+              name: "introduce",
+              icon: "ti-id-badge",
+              type: "textarea"
+            }, {
+              title: "显示自选文章",
+              p: "是否在资料中显示自选文章",
+              name: "isShowArticle",
+              value: res.resume.isShowArticle,
+              icon: "",
+              callback: "isShowArticleSwitch",
+              type: "switch"
+            }],
+            form_article: [{
+              title: "文章标题",
+              p: "标题",
+              place: res.resume.articleTitle,
+              value: res.resume.articleTitle,
+              name: "articleTitle",
+              icon: "",
+              type: "input"
+            }, {
+              title: "自选文章",
+              p: "可使用 Markdown 格式，不支持插入圖片",
+              place: res.resume.article,
+              value: res.resume.jobtitle,
+              name: "article",
+              icon: "ti-layout-media-right",
+              type: "textarea-auto-height"
+            }]
+          })
         })
       };
+    }, function() {
+      nApi.apiModel('userid 取值失敗');
     })
 
 
@@ -132,6 +121,29 @@ Page({
   onUnload: function() {
     // 页面关闭
   },
+  isShowArticleSwitch: function(e) {
+    // e.detail.value
+    var that = this;
+
+    that.setData({
+      'form[3].value': e.detail.value
+    })
+
+
+    if (e.detail.value) {
+      that.setData({
+        uiClass: {
+          showArticle: ''
+        }
+      })
+    } else {
+      that.setData({
+        uiClass: {
+          showArticle: 'hidden'
+        }
+      })
+    }
+  },
   formSubmit: function(e) {
     wx.showNavigationBarLoading()
 
@@ -154,7 +166,7 @@ Page({
             data: e.detail.value
           }
 
-          console.log("resume debug", updateData);
+          // console.log("resume debug", updateData);
 
           nApi.api('api/v1/Users/' + uid, "PATCH", updateData, function(res) {
 
@@ -168,6 +180,10 @@ Page({
 
             setTimeout(function() {
               wx.hideToast()
+
+              wx.switchTab({
+                url: '/pages/index/index'
+              })
             }, 2000)
           })
 
@@ -188,21 +204,12 @@ Page({
         wx.hideToast()
       }, 2000)
 
-      wx.hideNavigationBarLoading()
     }
+
+    wx.hideNavigationBarLoading()
 
   }
 })
-
-
-
-
-
-
-
-
-
-
 
 
 

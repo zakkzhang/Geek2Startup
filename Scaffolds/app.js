@@ -9,11 +9,17 @@ App({
       nApi.api('api/v1/Users?query={"openid":"' + nApi.openid + '"}', function(res) {
 
         if (res.length != 0) {
+
+          // 從 API 找到關聯用戶，設定本地緩存用戶 ID
+
           nApi.setUserID(res[0]._id);
         } else {
+
+          wx.clearStorage();
+
           // 找不到對應 openid, 提交用戶數據
           that.getUserInfo(function(res) {
-            console.log("onLaunch: ", res.nickName);
+            console.log("onLaunch - 新用戶，交換 openid:", res.nickName);
           });
         }
 
@@ -38,9 +44,20 @@ App({
       name: 'userinfo',
       data: userData
     }
+    var inviteData = {
+      name: 'inviteCode',
+      data: 0
+    }
+    var uid = 0;
 
     if (nApi.userid == 0) {
-      nApi.api('api/v1/Users/', 'POST', updateData);
+      // 找不到用戶，新建用戶，使用默認邀請碼 0
+      nApi.api('api/v1/Users/', 'POST', inviteData, function(res) {
+        uid = res._id;
+        nApi.api('api/v1/Users/' + res._id, 'PATCH', updateData, function(res) {
+          nApi.setUserID(uid);
+        });
+      });
     } else {
       nApi.api('api/v1/Users/' + nApi.userid, 'PATCH', updateData);
     }

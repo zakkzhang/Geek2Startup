@@ -1,8 +1,9 @@
 include ./../include/head
-include ./../include/menu
+include ./../include/menu-UserLogin
+include ./Menu
+
 #Login.ui.container
-	form.ui.form(class=typeof isError==true ? "good" : "error",method="post",action="/login")
-		h1.ui.header.text-center
-			| WeApp
-			.sub.header User Dashboard
-		.area
+	h1.ui.header
+		| WeApp
+		.sub.header User Dashboard
+	.area

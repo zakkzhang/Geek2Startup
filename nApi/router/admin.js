@@ -67,7 +67,7 @@ router.get('/qr', function(req, res) {
     });
   })
 
-  res.render('qr', {
+  res.render('user/qrLogin', {
     url: we.qrurl() + '/',
     qr: '/image/qr/'
   })
@@ -83,6 +83,62 @@ router.get('/qr/login/:uuid/:io', function(req, res) {
     "IO": req.params.io
   })
   res.end();
+});
+
+router.post('/qr/login/:uuid/:io', function(req, res) {
+  console.log("Post:", req.body);
+  console.log("UUID:", req.params.uuid);
+  console.log("IO:", req.params.io);
+
+  var returnCode = 0;
+  var io = res.io;
+
+  if (io.sockets.sockets[req.params.io] == undefined) {
+    console.log("Socket not connected");
+    returnCode = 2;
+  } else {
+    if (typeof req.body.openid == "undefined") {
+      returnCode = 1
+    } else {
+      returnCode = 0
+    }
+  }
+
+
+
+  switch (returnCode) {
+    case 0:
+      res.io.sockets.in(req.params.io).emit('Scan', {
+        url: "/user/",
+        openid: req.body.openid
+      });
+      res.json({
+        UUID: req.params.uuid,
+        IO: req.params.io,
+        openid: req.body.openid,
+        return: "done"
+      })
+      break;
+    case 1:
+      res.json({
+        retuan: "error",
+        message: "no openid"
+      })
+      break;
+    case 2:
+      res.json({
+        retuan: "error",
+        message: 'user not online'
+      })
+      break;
+    default:
+      res.json({
+        retuan: "error",
+        message: '???'
+      })
+
+  }
+
 });
 
 router.get('/image/qr/:io', function(req, res) {

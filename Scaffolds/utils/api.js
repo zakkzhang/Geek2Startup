@@ -7,7 +7,7 @@ var dev = false;
 var server;
 
 server = "https://app.geek2startup.com";
-// server = "http://192.168.1.155:7000";
+server = "http://192.168.1.155:7000";
 
 var oid;
 var dbid;
@@ -19,22 +19,21 @@ class api {
     this.userid = 0;
   }
 
-  getID(){
-
-    if (this.userid == 0) {
-      if (dbid == 0) {
-        return 0;
-      } else {
-        return dbid;
-      }
-    } else {
-      return this.userid;
-    }
-
+  getServer() {
+    return server
   }
 
   apiMsg(msg) {
     console.log("api Message: " + msg);
+  }
+
+  apiModel(msg) {
+    wx.showModal({
+      title: 'API 通信錯誤',
+      showCancel: false,
+      content: msg,
+      success: function(res) {}
+    })
   }
 
   // 本地讀取 open id
@@ -216,7 +215,7 @@ class api {
       url = server + '/' + path;
     }
 
-    console.log("api: " + url + " method: " + method);
+    // console.log("api: " + url + " method: " + method);
 
     wx.request({
       url: url,
@@ -225,7 +224,7 @@ class api {
       header: header,
       success: function(res) {
 
-        console.log("return: " + path + " method: " + method + " statusCode: " + res.statusCode);
+        console.log("api return: " + path + " method: " + method + " statusCode: " + res.statusCode);
 
         if ((res.statusCode == 502 || res.statusCode == 404) && dev == false) {
           wx.showModal({

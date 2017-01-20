@@ -74,6 +74,10 @@ app.use('/user', user);
 var wx = require('./router/wx');
 app.use('/wx', wx); //交換 openid
 
+// api+
+var apiPlus = require('./router/apiPlus');
+app.use('/apiPlus', apiPlus);
+
 module.exports = {
   app: app
 };

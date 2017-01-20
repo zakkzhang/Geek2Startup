@@ -5,32 +5,17 @@ Page({
   data: {
     appData: app.globalData.appData,
     setting: [{
-      "title": "推送",
-      "isTitle": true
-    }, {
-      "name": "接受微信通知",
-      "icon": "",
-      "isSwitch": true,
-      "isTitle": false
-    },{
-      "title": "隐私",
-      "isTitle": true
-    }, {
-      "name": "申请微信联络信息自动接受",
-      "icon": "",
-      "isSwitch": true,
-      "isTitle": false
-    }, {
-      "name": "在网络中可见",
-      "icon": "",
-      "isSwitch": true,
-      "isTitle": false
-    }, {
       "title": "功能",
       "isTitle": true
     }, {
-      "name": "申请邀请码",
-      "to": "/pages/set/apply",
+      "name": "欢迎页面",
+      "to": "/pages/index/newUser",
+      "icon": "",
+      "isSwitch": false,
+      "isTitle": false
+    }, {
+      "name": "填写邀请码",
+      "to": "/pages/index/newUser2",
       "icon": "",
       "isSwitch": false,
       "isTitle": false
@@ -43,12 +28,6 @@ Page({
     }, {
       "name": "清理本地数据",
       "to": "/pages/set/clean",
-      "icon": "",
-      "isSwitch": false,
-      "isTitle": false
-    }, {
-      "name": "欢迎页面",
-      "to": "/pages/index/newUser",
       "icon": "",
       "isSwitch": false,
       "isTitle": false
@@ -95,6 +74,14 @@ Page({
 
   }
 })
+
+
+
+
+
+
+
+
 
 
 

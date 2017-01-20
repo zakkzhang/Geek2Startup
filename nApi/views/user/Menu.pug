@@ -1,0 +1,11 @@
+.ui.container
+	.ui.menu.secondary.LoginMenu
+		a.item#openMenu
+			i.sidebar.icon
+			| 菜单
+		.right.menu
+			a.item
+				img.userImage(src=userinfo.avatarUrl)
+				| #{userinfo.nickName}
+			a.item
+				| 登出

@@ -1,0 +1,35 @@
+.ui.container
+	.area
+		.ui.grid
+			.sixteen.wide.column
+				h3.ui.header 生成邀請碼
+			.ten.wide.column
+				p - 用於生成用戶邀請碼
+			.six.wide.column.text-right
+				form(action="",method="post")
+					input(hidden,name="BuildCode",value="")
+					button.ui.button.basic.positive(type='submit') 生成
+			.ten.wide.column
+				h3.ui.header 邀請碼
+			.six.wide.column.text-right.hidden
+				.ui.slider.checkbox
+					input(type='checkbox', name='newsletter')
+					label 顯示已經使用的
+
+
+			table.ui.celled.table.font-min
+				thead
+					tr
+						th
+							| 生成時間
+						th(colspan="2")
+							| 邀請碼
+				tbody
+					each val,key in invite
+						tr
+							td.collapsing #{val.date}
+							td #{val.inviteCode}
+							if !val.isUsered
+								td.right.aligned.collapsing 未使用
+							else
+								td.right.aligned.collapsing 已使用

@@ -21,7 +21,7 @@
 
   </block>
 
-    <!-- textarea -->
+  <!-- textarea -->
   <block wx:if="{{weData.type == 'textarea-auto-height'}}" >
 
     <label>
@@ -29,6 +29,20 @@
       <view class="p color-light" >{{weData.p}}</view>
     </label>
     <textarea name="{{weData.name}}" style="min-height: 300px;" value="{{weData.value}}"  auto-height placeholder="{{weData.place}}" />
+
+  </block>
+
+  <!-- textarea -->
+  <block wx:if="{{weData.type == 'switch'}}" >
+
+    <view class="switch flex flex-row jcontent-center" >
+      <view class="flex flex-1 flex-column" >
+        <view class="flex title b"><text class="{{weData.icon}}"></text>  {{weData.title}}</view>
+        <view class="flex p color-light" >{{weData.p}}</view>
+      </view>
+      <switch class="aself-center" checked="{{weData.value}}" bindchange="{{weData.callback}}"/>
+    </view>
+    <input class="hidden" name="{{weData.name}}" value="{{weData.value}}" />
 
   </block>
 

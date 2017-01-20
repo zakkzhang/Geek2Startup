@@ -1,20 +1,13 @@
 include include/head
 include include/menu
-#Login.ui.container
-	form.ui.form(class=typeof isError==true ? "good" : "error",method="post",action="/login")
-		h1.ui.header.text-center
-			| WeApp
-			.sub.header Dashboard
-		.area
-			h4.ui.dividing.header Login Form
-			if isError
-				.ui.error.message
-					.header Action Forbidden
-					p 錯誤的賬戶或者密碼
-			.field
-				label User
-				input(type='text', name='name', placeholder='Name')
-			.field
-				label Password
-				input(type='password', name='password', placeholder='Password')
-			button.ui.primary.button(type='submit') Submit
+.ui.container
+	.ui.menu.secondary
+		a.item#openMenu
+			i.sidebar.icon
+			| Menu
+
+
+	.area
+		h1.ui.header.color-green 极客吐司
+			.sub.header 小程序
+		p 一个内嵌在微信的简历小插件

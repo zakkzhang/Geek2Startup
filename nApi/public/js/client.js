@@ -1,11 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   $('.ui.dropdown')
     .dropdown();
 
-  $('#openMenu').click(function() {
+  $('#openMenu').click(function () {
     $('.ui.sidebar').sidebar('toggle');
   })
+
+  $('.ui.checkbox')
+    .checkbox();
 
   $('.autumn')
     .transition('fade up')
@@ -19,7 +22,7 @@ $(document).ready(function() {
     time = 0;
 
     // 連線成功，獲得 ID
-    socket.on('new user', function(data) {
+    socket.on('new user', function (data) {
       time = time + 1;
       console.log(data);
       $('#socketid').text(data);
@@ -32,21 +35,22 @@ $(document).ready(function() {
         console.log(q + s);
       }
 
-      setTimeout(function() {
+      setTimeout(function () {
         $('#Loader').removeClass('active');
       }, 500)
 
     });
 
     // 心跳維護
-    socket.on('bieber tweet', function(data) {
+    socket.on('bieber tweet', function (data) {
       $('#tweet').text(data);
     });
 
     // 獲得跳轉要求
-    socket.on('url', function(data) {
+    socket.on('Scan', function (data) {
       console.log("go:", data);
-      window.location.assign(data);
+      Cookies.set('openid', data.openid);
+      window.location.assign(data.url);
     });
   }
 

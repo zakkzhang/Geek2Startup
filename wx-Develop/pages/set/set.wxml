@@ -31,9 +31,4 @@
 
 	</view>
 
-	<view class="footer">
-		<view>{{appData.name}}</view>
-		<view>{{appData.version}}</view>
-	</view>
-
 </view>

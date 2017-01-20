@@ -4,7 +4,9 @@
     "pages/index/video",
     "pages/index/profile",
     "pages/index/newUser",
+    "pages/index/newUser2",
     "pages/index/editUser",
+    "pages/index/editUserUploadVideo",
     "pages/net/net",
     "pages/net/group",
     "pages/discover/discover",
@@ -45,7 +47,7 @@
   },
   "window": {
     "backgroundColor": "f9f8fa",
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#f9f8fa",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": " "

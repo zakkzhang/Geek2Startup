@@ -1,6 +1,6 @@
 <template name="index-box">
 
-  <!-- Video -->
+  <!-- newUser -->
   <block wx:if="{{weData.display == 'newUser'}}" >
 
     <navigator url="/pages/index/profile?id={{weData.id}}" hover-class="navigator-hover">
@@ -23,7 +23,7 @@
   <!-- Video -->
   <block wx:if="{{weData.display == 'video'}}" >
 
-    <navigator url="/pages/index/video?video={{weData.address}}" hover-class="navigator-hover">
+    <navigator url="/pages/index/video?uid={{weData.uid}}" hover-class="navigator-hover">
 
       <view class="padding-l row" >
         <view class="icon">
@@ -51,7 +51,7 @@
         </view>
         <view class="text">
           <text class="title">{{weData.name}}</text>
-          <view class="p">{{weData.text}} </view>
+          <view class="p text-more">{{weData.text}} </view>
         </view>
       </view>
 
@@ -70,7 +70,7 @@
         </view>
         <view class="text">
           <text class="title">{{weData.name}}</text>
-          <view class="p">{{weData.text}}</view>
+          <view class="p text-more">{{weData.text}}</view>
         </view>
       </view>
 

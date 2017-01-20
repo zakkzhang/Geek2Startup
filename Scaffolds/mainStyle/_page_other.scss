@@ -18,3 +18,50 @@
 	}
 
 }
+
+.onePages {
+	padding: 15px;
+	text-align: center;
+
+	.control {
+		position: fixed;
+		width: 460rpx;
+		margin-left: -230rpx;
+		left: 50%;
+		padding-bottom: 100rpx;
+		bottom: 0;
+	}
+
+	.image image {
+		height: 600rpx;
+		width: 600rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -400rpx;
+    margin-left: -300rpx;
+	}
+
+	.p {
+		text-align: center;
+		font-size: 24rpx;
+		font-weight: 800;
+		color: #4A4A4A;
+	}
+
+	.button {
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 32rpx;
+		width: 460rpx;
+		height: 84rpx;
+		color: #fff;
+		font-weight: 800;
+		line-height: 84rpx;
+		font-size: 12px;
+		background: #F24885;
+		box-shadow: 0 8px 12px 0 rgba(242, 72, 133, 0.24);
+		border-radius: 100px;
+	}
+
+}

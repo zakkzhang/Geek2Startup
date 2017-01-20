@@ -16,9 +16,10 @@ Page({
       path: 'pages/index/profile?userid='
     }
   },
-  onReady: function() {
-    // 页面渲染完成
-    // wx.hideNavigationBarLoading()
+  onReady: function(needRefresh) {
+
+    this.onPullDownRefresh();
+
   },
   onShow: function() {
     //console.log('onShow')
@@ -26,31 +27,38 @@ Page({
   onHide: function() {
     //console.log('onHide')
   },
-  onLoad: function() {
-    wx.showNavigationBarLoading()
-    console.log("index onLoad ...");
-    var that = this;
+  onPullDownRefresh: function() {
 
+    wx.showNavigationBarLoading()
+    var that = this;
+    var showArticle = 'link';
     app.getUserID(function(uid) {
       console.log("nApi uid ...", uid);
       if (uid != 0) {
         nApi.api('api/v1/Users/' + uid, function(res) {
 
-          wx.hideNavigationBarLoading()
+          console.log("res.isNewUser", res.isNewUser);
 
-          console.log("nApi index ...");
+          wx.hideNavigationBarLoading();
 
-          if (typeof res.resume != "undefined") {
+          if (res.isNewUser == false) {
+            console.log("nApi index ...");
+
+            wx.stopPullDownRefresh();
+
+            if (!res.resume.isShowArticle) {
+              showArticle = 'none'
+            };
+
             that.setData({
-              isNew: false,
               api: res,
               body: [{
-                "address": "https://app.geek2startup.com/json/demo.mp4",
+                "uid": res._id,
                 "display": "video",
                 "icon": "ti-video-camera",
                 "type": "视频介绍",
-                "name": "视频",
-                "time": "0:40"
+                "name": res.video.name,
+                "time": res.video.duration
               }, {
                 "display": "text",
                 "icon": "ti-id-badge",
@@ -60,7 +68,7 @@ Page({
                 "text": res.resume.introduce
               }],
               more: [{
-                "display": "link",
+                "display": showArticle,
                 "icon": "ti-layout-media-right",
                 "id": res._id,
                 "name": res.resume.articleTitle,
@@ -81,8 +89,17 @@ Page({
 
         });
       };
+    }, function() {
+      wx.switchTab({
+        url: '/pages/index/index'
+      })
     })
 
+
+
+  },
+  onLoad: function() {
+    var that = this;
     //getUserData
     app.getUserInfo(function(userInfo) {
       //更新数据
@@ -92,6 +109,24 @@ Page({
     })
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

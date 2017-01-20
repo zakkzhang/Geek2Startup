@@ -1,20 +1,106 @@
 // index
 
+.updateVideo {
+
+  .empty {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -300rpx;
+    margin-left: -196rpx;
+    width: 392rpx;
+    height: 546rpx;
+  }
+  .control {
+    position: fixed;
+    width: 460rpx;
+    margin-left: -230rpx;
+    left: 50%;
+    padding-bottom: 100rpx;
+    bottom: 0;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #4A4A4A;
+  }
+
+  image {
+    height: 322rpx;
+    width: 392rpx;
+    margin: 0 auto;
+    margin-top: 68rpx;
+    margin-bottom: 120rpx;
+  }
+
+  .button {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 32rpx;
+    width: 460rpx;
+    height: 84rpx;
+    color: #fff;
+    font-weight: 800;
+    line-height: 84rpx;
+    font-size: 12px;
+    background: #F24885;
+    box-shadow: 0 8px 12px 0 rgba(242, 72, 133, 0.24);
+    border-radius: 100px;
+  }
+
+  .button.second {
+    text-align: center;
+    background: none;
+    border: 1px #F24885 solid;
+    color: #F24885;
+    box-shadow: 0 2px 4px 0 rgba(242, 72, 133, 0.24);
+  }
+
+}
+
 .newUser {
   .image image {
     height: 240rpx;
     width: 384rpx;
     margin: 0 auto;
-    margin-top: 120rpx;
-    margin-bottom: 110rpx;
+    margin-top: 100rpx;
+    margin-bottom: 50rpx;
+  }
+
+  .image2 image {
+    height: 218rpx;
+    width: 402rpx;
+    margin: 0 auto;
+    margin-top: 100rpx;
+    margin-bottom: 50rpx;
   }
 
   .p {
     text-align: left;
-    margin: 0 auto;
     width: 552rpx;
+    margin: 0 auto;
     margin-top: 32rpx;
     font-size: 24rpx;
+  }
+
+  input {
+    margin: 0 auto;
+    margin-top: 32rpx;
+    height: 84rpx;
+    width: 460rpx;
+    background-color: #F4F8FC;
+    border-radius: 8rpx;
+    font-size: 9px;
+  }
+
+  input[disabled] {
+    color: #ccc;
   }
 
   .button {
@@ -28,11 +114,21 @@
     color: #fff;
     font-weight: 800;
     line-height: 84rpx;
+    font-size: 12px;
+  }
+
+  .button.second {
+
+    /* Rectangle 2: */
+    background: #B7D9FB;
+    box-shadow: 0 8px 12px 0 rgba(183, 217, 251, 0.48);
+    border-radius: 100px;
+    color: #4A4A4A;
   }
 
   .card {
     position: fixed;
-    left: 8vw;
+    left: 7vw;
     top: 10vh;
     height: 70vh;
     width: 76vw;

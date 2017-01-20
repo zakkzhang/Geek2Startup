@@ -1,24 +1,24 @@
 <view class="video">
 	<view class="head">
-		<video class="video-view"src="{{src}}"objectFit="cover"controls ></video>
+		<video class="video-view" src="{{src}}" objectFit="cover" controls ></video>
 	</view>
 	<view class="meta">
 		<view class="top flex flex-row">
-			<view class="flex-1 b">video name</view>
-			<view>20, 323 views</view>
+			<view class="flex-1 b">{{video.name}}</view>
+			<view class="hidden">20, 323 views</view>
 		</view>
 		<hr/>
 		<view class="mid flex flex-row">
 			<view class="flex flex-row flex-1">
-				<view class="avatar-box"><image class="avatar" src="http://wx.qlogo.cn/mmopen/vi_32/Q3auHgzwzM4ZyQOVJYd1uLJVniaD1icib8icX5ZYZbL00Jby4DBdgXKXBibe9Hk7FsR0bkdCHGCvvMQ0EicgKsyN0zkg/0" /></view>
+				<view class="avatar-box"><image class="avatar" src="{{user.avatarUrl}}" /></view>
 				<view class="flex flex-column jcontent-center aitems-flex-start" >
-					<view class="title b" >username</view>
-					<view class="p color-light" >username</view>
+					<view class="title b" >{{user.nickName}}</view>
+					<view class="p color-light" >{{user.jobtitle}}</view>
 				</view>
 			</view>
 		</view>
 		<hr/>
-		<view class="main transcript" >
+		<view class="main transcript hidden" >
 			<view class="title b">Subtitles and Transcript</view>
 			<view class="flex flex-row on" >
 				<view class="title color-light">0:11</view>

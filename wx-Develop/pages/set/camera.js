@@ -1,44 +1,74 @@
 var app = getApp()
 var api = require('../../utils/api.js')
 var nApi = new api();
-// pages/set/camera.js
+
 Page({
   data: {
-    qr_return: "not now"
+    uiText: {
+      mainButton: '启动摄像头',
+      tips: '请使用电脑访问 .../qr '
+    },
+    apiServer: ''
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
-    this.reFresh();
-  },
-  onReady: function() {
+    // this.reFresh();
 
-  },
-  onShow: function() {
-    // 页面显示
-  },
-  onHide: function() {
-    // 页面隐藏
-  },
-  onUnload: function() {
-    // 页面关闭
+    var that = this;
+    that.setData({
+      uiText: {
+        mainButton: '启动摄像头',
+        tips: '请使用电脑访问 ' + nApi.getServer() + '/qr '
+      },
+      apiServer: nApi.getServer()
+    })
+
   },
   onSync: function(url) {
     wx.showNavigationBarLoading()
     var that = this;
+
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    })
+
+    // "http://192.168.1.155:7000/qr/login/ab83a271-f15f-4c61-aae8-6b7a12585697/HBL1Ro5Q1c2Y-DVhAAAC"
+    var postData = {
+      date: new Date()
+    }
+    nApi.api(url, postData, "POST", function(res) {
+      console.log(res);
+
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
+      })
+
+      setTimeout(function() {
+        wx.hideToast()
+      }, 2000)
+
+      if (res.return) {
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
+      };
+    })
 
   },
   onCamera: function() {
     var that = this;
     wx.scanCode({
       success: (res) => {
-        console.log(res);
         that.onSync(res.result);
       }
     })
   },
   onLogin: function() {
-    nApi.login();
-    this.reFresh();
+    nApi.changeOpenid();
   },
   onClean: function() {
     wx.showActionSheet({
@@ -54,43 +84,20 @@ Page({
         console.log(res.errMsg)
       }
     })
-
   },
   reFresh: function() {
     var that = this;
-    nApi.getOpenid(function(o) {
+    nApi.getOpenID(function(openid) {
       that.setData({
-        qr_return: o
+        qr_return: openid
       })
     }, function() {
       that.setData({
-        qr_return: 'fail'
+        qr_return: "fail"
       })
-    });
+    })
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

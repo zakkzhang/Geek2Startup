@@ -10,12 +10,83 @@ var moment = require('moment');
 const request = require('request')
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/weapp");
+
 // 用戶信息
 var Users = mongoose.model('Users', new mongoose.Schema({
   openid: {
     type: String,
     required: true
   },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
+  video: {
+    name: {
+      type: String,
+      default: ''
+    },
+    duration: {
+      type: String,
+      default: ''
+    },
+    file: {
+      originalname: String,
+      encoding: String,
+      mimetype: String,
+      destination: String,
+      filename: String,
+      path: {
+        type: String,
+        default: ''
+      },
+      size: String,
+    }
+  },
+  meta: {
+    views: [{
+      userid: String,
+      openid: String,
+      nickName: String,
+      avatarUrl: String,
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }],
+    likes: [{
+      userid: String,
+      openid: String,
+      nickName: String,
+      avatarUrl: String,
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }]
+  },
+  inviteMore: {
+    max: {
+      type: Number,
+      default: 0
+    }
+  },
+  inviteCode: {
+    type: String,
+    required: true
+  },
+  isNewUser: {
+    type: Boolean,
+    default: true
+  },
+  certifications: [{
+    isShow: {
+      type: Boolean,
+      default: true
+    },
+    name: String,
+    date: Date
+  }],
   userinfo: {
     nickName: String,
     gender: Number,
@@ -26,11 +97,30 @@ var Users = mongoose.model('Users', new mongoose.Schema({
     avatarUrl: String
   },
   resume: {
-    article: String,
-    articleTitle: String,
-    aword: String,
-    introduce: String,
-    jobtitle: String
+    isShowArticle: {
+      type: Boolean,
+      default: true
+    },
+    article: {
+      type: String,
+      default: '正文'
+    },
+    articleTitle: {
+      type: String,
+      default: '自选文章-标题'
+    },
+    aword: {
+      type: String,
+      default: '一句话介绍'
+    },
+    introduce: {
+      type: String,
+      default: '自我介绍'
+    },
+    jobtitle: {
+      type: String,
+      default: '职业头衔'
+    }
   },
   data: {
     type: Array
@@ -54,6 +144,7 @@ var Users = mongoose.model('Users', new mongoose.Schema({
 }, {
   collection: "accounts"
 }));
+
 // 微信信息
 var wxData = mongoose.model('wxData', new mongoose.Schema({
   session_key: {
@@ -72,15 +163,73 @@ var wxData = mongoose.model('wxData', new mongoose.Schema({
   collection: "wxData"
 }));
 
+// 微信信息
+var Group = mongoose.model('Group', new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  Description: {
+    type: String,
+    required: true
+  },
+}, {
+  collection: "Group"
+}));
+
+// Geek2Startup 文章
+var geekArticle = mongoose.model('geekArticle', new mongoose.Schema({
+  article: {
+    type: String,
+    required: true
+  },
+  articleTitle: {
+    type: Number,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+}, {
+  collection: "geekArticle"
+}));
+
+// GeekInvite 邀請碼
+var geekInvite = mongoose.model('geekInvite', new mongoose.Schema({
+  inviteCode: {
+    type: String,
+    required: true
+  },
+  buildByUserID: {
+    type: String,
+    required: true
+  },
+  buildByOpenID: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  isUsered: {
+    type: Boolean,
+    default: false
+  }
+}, {
+  collection: "geekInvite"
+}));
+
 // API 訪問
 var UsersOption = {
-  preCreate: function(req, res, next) {
+  preCreate: function (req, res, next) {
 
     logMsg('preCreate ...');
 
     Users.findOne({
       openid: req.body.openid
-    }, function(err, doc) {
+    }, function (err, doc) {
       if (doc == null) {
         logMsg('preCreate do!');
         next();
@@ -92,7 +241,7 @@ var UsersOption = {
       }
     });
   },
-  preUpdate: function(req, res, next) {
+  preUpdate: function (req, res, next) {
 
     logMsg('preUpdate ...');
 
@@ -105,7 +254,7 @@ var UsersOption = {
     }
 
   },
-  preRead: function(req, res, next) {
+  preRead: function (req, res, next) {
 
     logMsg('preRead ...');
 
@@ -122,10 +271,12 @@ var UsersOption = {
 // 建立 API 路由
 resify.serve(router, Users, UsersOption);
 resify.serve(router, wxData);
+resify.serve(router, geekArticle);
+resify.serve(router, geekInvite);
 
 function updateTimesbyFindID(id, key, date, callback) {
 
-  Users.findById(id, function(err, found) {
+  Users.findById(id, function (err, found) {
     if (found == null) {
       logMsg('preRead ID not exist');
       callback(null);
@@ -145,7 +296,7 @@ function updateTimesbyFindID(id, key, date, callback) {
         }
       }
 
-      Users.findByIdAndUpdate(found.id, updateData, function(err, user) {
+      Users.findByIdAndUpdate(found.id, updateData, function (err, user) {
         if (err) throw err;
         callback(null);
       });
@@ -188,5 +339,7 @@ module.exports = {
   router: router,
   mo_Users: Users,
   mo_wxData: wxData,
+  mo_geekInvite: geekInvite,
+  mo_geekArticle: geekArticle,
   fn_errMsg: errMsg
 };
