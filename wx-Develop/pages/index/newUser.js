@@ -13,35 +13,27 @@ Page({
       })
     })
   },
-  onReady: function() {
-    // 页面渲染完成
-  },
-  onShow: function() {
-    // 页面显示
-  },
-  onHide: function() {
-    // 页面隐藏
-  },
-  onUnload: function() {
-    // 页面关闭
-  },
   clickGo: function() {
+    wx.showNavigationBarLoading()
+
     nApi.getUserID(function(uid) {
-      nApi.api('api/v1/Users/' + uid, "PATCH", {
+      console.log("newUser:", uid);
+
+      var patchData = {
         name: 'isNewUser',
         data: false
-      }, function(res) {
+      };
+
+      nApi.api('api/v1/Users/' + uid, "PUT", patchData, function(res) {
         wx.redirectTo({
           url: '/pages/index/newUser2'
         })
+        wx.hideNavigationBarLoading();
+
       });
     })
   }
 })
-
-
-
-
 
 
 

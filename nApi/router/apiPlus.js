@@ -64,9 +64,6 @@ router.post('/inviteCode/:uid', function (req, res, next) {
 router.post('/uploadVideo/:uid', upload.single('file'), function (req, res,
   next) {
 
-  console.log("req.file", req.file);
-  console.log("req.body", req.body);
-
   m.mo_Users.findByIdAndUpdate(req.params.uid, {
     video: {
       name: req.body.name,
@@ -86,9 +83,11 @@ router.post('/uploadVideo/:uid', upload.single('file'), function (req, res,
       res.statusCode = 400;
       return res.send('error');
     }
+
     res.json({
       return: 'done'
     })
+
   });
 
 })
@@ -107,7 +106,8 @@ router.get('/playVideo/:uid', function (req, res, next) {
     var file = doc.video.file.path;
     fs.stat(file, function (err, stats) {
       if (err) {
-        res.end(err);
+        res.statusCode = 400;
+        return res.send('error');
       }
       var range = req.headers.range;
       if (!range) {

@@ -2,12 +2,13 @@
 
 var app = getApp();
 var util = require('util.js');
-var dev = false;
+var dev = true;
 
 var server;
 
 server = "https://app.geek2startup.com";
-server = "http://192.168.1.155:7000";
+// server = "http://app.geek2startup.com:3000";
+// server = "http://192.168.1.155:3000";
 
 var oid;
 var dbid;
@@ -182,6 +183,9 @@ class api {
 
         if (p == 'GET' || p == 'POST' || p == 'PATCH' || p == 'PUT' || p == 'DELETE') {
           iMethod = p
+          if (iMethod == 'PATCH') {
+            iMethod = 'PUT'
+          };
         } else {
           path = p;
         }
@@ -215,7 +219,7 @@ class api {
       url = server + '/' + path;
     }
 
-    // console.log("api: " + url + " method: " + method);
+    console.log("api: " + url + " method: " + method);
 
     wx.request({
       url: url,
@@ -248,7 +252,9 @@ class api {
       fail: function() {
         console.log("[fail] " + "api: " + path + " method: " + method);
       },
-      complete: function() {}
+      complete: function() {
+        // console.log("wx.request - END");
+      }
     })
   }
 

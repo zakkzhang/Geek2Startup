@@ -226,6 +226,7 @@ var UsersOption = {
   preCreate: function (req, res, next) {
 
     logMsg('preCreate ...');
+    console.log('API: method:', req.method);
 
     Users.findOne({
       openid: req.body.openid
@@ -244,6 +245,7 @@ var UsersOption = {
   preUpdate: function (req, res, next) {
 
     logMsg('preUpdate ...');
+    console.log('API: method:', req.method);
 
     if (!isEmpty(req.params)) {
       // 如果是帶有 ID
@@ -257,6 +259,7 @@ var UsersOption = {
   preRead: function (req, res, next) {
 
     logMsg('preRead ...');
+    console.log('API: method:', req.method);
 
     if (!isEmpty(req.params)) {
       // 如果是帶有 ID

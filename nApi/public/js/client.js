@@ -17,7 +17,7 @@ $(document).ready(function () {
 
   if (isID('QR')) {
     console.log("socket.io on run");
-    var socket = io('//localhost:3000');
+    var socket = io('//app.geek2startup.com');
 
     time = 0;
 
