@@ -6,8 +6,8 @@ var dev = true;
 
 var server;
 
-server = "https://app.geek2startup.com";
-// server = "http://app.geek2startup.com:3000";
+// server = "https://app.geek2startup.com";
+server = "http://app.geek2startup.com:3000";
 // server = "http://192.168.1.155:3000";
 
 var oid;
@@ -183,7 +183,7 @@ class api {
 
         if (p == 'GET' || p == 'POST' || p == 'PATCH' || p == 'PUT' || p == 'DELETE') {
           iMethod = p
-          if (iMethod == 'PATCH') {
+          if (iMethod == '  ') {
             iMethod = 'PUT'
           };
         } else {

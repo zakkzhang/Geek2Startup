@@ -1,5 +1,5 @@
 var api = require('/utils/api.js')
-const nApi = new api();
+var nApi = new api();
 
 App({
   onLaunch: function() {
